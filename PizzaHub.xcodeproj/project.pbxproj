@@ -15,6 +15,12 @@
 		1FE3AF6E23F274090050662E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FE3AF6C23F274090050662E /* LaunchScreen.storyboard */; };
 		1FE3AF7923F2740A0050662E /* PizzaHubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE3AF7823F2740A0050662E /* PizzaHubTests.swift */; };
 		1FE3AF8423F2740A0050662E /* PizzaHubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE3AF8323F2740A0050662E /* PizzaHubUITests.swift */; };
+		1FE3AF9223F2772A0050662E /* OrderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE3AF9123F2772A0050662E /* OrderManager.swift */; };
+		1FE3AF9323F2772A0050662E /* OrderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE3AF9123F2772A0050662E /* OrderManager.swift */; };
+		1FE3AF9523F2781E0050662E /* ShoppingCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE3AF9423F2781E0050662E /* ShoppingCart.swift */; };
+		1FE3AF9623F2781E0050662E /* ShoppingCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE3AF9423F2781E0050662E /* ShoppingCart.swift */; };
+		1FE3AF9A23F278740050662E /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE3AF9923F278740050662E /* MenuItem.swift */; };
+		1FE3AF9B23F278740050662E /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE3AF9923F278740050662E /* MenuItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +55,9 @@
 		1FE3AF7F23F2740A0050662E /* PizzaHubUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PizzaHubUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FE3AF8323F2740A0050662E /* PizzaHubUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaHubUITests.swift; sourceTree = "<group>"; };
 		1FE3AF8523F2740A0050662E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1FE3AF9123F2772A0050662E /* OrderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderManager.swift; sourceTree = "<group>"; };
+		1FE3AF9423F2781E0050662E /* ShoppingCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCart.swift; sourceTree = "<group>"; };
+		1FE3AF9923F278740050662E /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +108,8 @@
 		1FE3AF6023F274070050662E /* PizzaHub */ = {
 			isa = PBXGroup;
 			children = (
+				1FE3AF9823F278490050662E /* Controller */,
+				1FE3AF9723F278250050662E /* Model */,
 				1FE3AF6123F274070050662E /* AppDelegate.swift */,
 				1FE3AF6323F274070050662E /* SceneDelegate.swift */,
 				1FE3AF6523F274070050662E /* ContentView.swift */,
@@ -134,6 +145,23 @@
 				1FE3AF8523F2740A0050662E /* Info.plist */,
 			);
 			path = PizzaHubUITests;
+			sourceTree = "<group>";
+		};
+		1FE3AF9723F278250050662E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1FE3AF9423F2781E0050662E /* ShoppingCart.swift */,
+				1FE3AF9923F278740050662E /* MenuItem.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1FE3AF9823F278490050662E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1FE3AF9123F2772A0050662E /* OrderManager.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,7 +295,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FE3AF9523F2781E0050662E /* ShoppingCart.swift in Sources */,
+				1FE3AF9223F2772A0050662E /* OrderManager.swift in Sources */,
 				1FE3AF6223F274070050662E /* AppDelegate.swift in Sources */,
+				1FE3AF9A23F278740050662E /* MenuItem.swift in Sources */,
 				1FE3AF6423F274070050662E /* SceneDelegate.swift in Sources */,
 				1FE3AF6623F274070050662E /* ContentView.swift in Sources */,
 			);
@@ -277,6 +308,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FE3AF9323F2772A0050662E /* OrderManager.swift in Sources */,
+				1FE3AF9B23F278740050662E /* MenuItem.swift in Sources */,
+				1FE3AF9623F2781E0050662E /* ShoppingCart.swift in Sources */,
 				1FE3AF7923F2740A0050662E /* PizzaHubTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

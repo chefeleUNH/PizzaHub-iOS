@@ -18,10 +18,49 @@ class PizzaHubTests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
+    
+    // MARK: MenuItem Class Tests
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testMenuItemInitializationSucceeds() {
+        // Cheap item
+        let smallPepperoniItem = MenuItem.init(name: "Small Pepperoni", price: 12.50)
+        XCTAssertNotNil(smallPepperoniItem)
+        
+        // Expensive item
+        let largeSupremeItem = MenuItem.init(name: "Large Supreme", price: 27.00)
+        XCTAssertNotNil(largeSupremeItem)
+    }
+    
+    func testMenuItemInitializationFails() {
+        // Item with no description
+        let noDescriptionItem = MenuItem.init(name: "", price: 10.00)
+        XCTAssertNil(noDescriptionItem)
+        
+        // Item with negative price item
+        let negativePriceItem = MenuItem.init(name: "Large Supreme", price: -5.00)
+        XCTAssertNil(negativePriceItem)
+    }
+    
+    // MARK: ShoppingCart Class Tests
+    
+    func testShoppingCartAddItem() {
+        let smallPepperoniItem = MenuItem.init(name: "Small Pepperoni", price: 12.50)
+        let largeSupremeItem = MenuItem.init(name: "Large Supreme", price: 27.00)
+        let cart = ShoppingCart.init()
+        XCTAssertEqual(0, cart.items.count)
+        cart.addItem(item: smallPepperoniItem!)
+        XCTAssertEqual(1, cart.items.count)
+        cart.addItem(item: largeSupremeItem!)
+        XCTAssertEqual(2, cart.items.count)
+    }
+    
+    func testShoppingCartReturnTotal() {
+        let smallPepperoniItem = MenuItem.init(name: "Small Pepperoni", price: 12.50)
+        let largeSupremeItem = MenuItem.init(name: "Large Supreme", price: 27.00)
+        let cart = ShoppingCart.init()
+        cart.addItem(item: smallPepperoniItem!)
+        cart.addItem(item: largeSupremeItem!)
+        XCTAssertEqual(39.50, cart.returnTotal())
     }
 
     func testPerformanceExample() {
