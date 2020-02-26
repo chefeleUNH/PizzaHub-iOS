@@ -7,10 +7,23 @@
 //
 
 import SwiftUI
+import FirebaseFirestore
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
+        Text("Firebase Console Test")
+        .onAppear() {
+            let db = Firestore.firestore()
+            db.collection("pizzerias").getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    for document in querySnapshot!.documents {
+                        print("\(document.documentID) => \(document.data())")
+                    }
+                }
+            }
+        }
     }
 }
 
