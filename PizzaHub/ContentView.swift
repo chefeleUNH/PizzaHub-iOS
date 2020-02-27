@@ -23,9 +23,9 @@ struct ContentView: View {
             .padding(10.0)
             
             Button(action: {
-                getCollection(collection: "pizzerias")
+                updatePizzerias()
             }) {
-                Text("Get All Pizzerias")
+                Text("Update Pizzerias")
                     .font(.largeTitle)
             }
             .padding(10.0)
@@ -37,6 +37,14 @@ struct ContentView: View {
                     .font(.largeTitle)
             }
             .padding(10.0)
+            
+            Button(action: {
+                getCollection(collection: "pizzerias")
+            }) {
+                Text("Get All Pizzerias")
+                    .font(.largeTitle)
+            }
+            .padding(10.0)
         }
     }
 }
@@ -44,27 +52,43 @@ struct ContentView: View {
 private func createPizzerias() {
     let pizzeriasRef = db.collection("pizzerias")
     
-    pizzeriasRef.document().setData([
+    pizzeriasRef.document("Vetrano's").setData([
         "name": "Vetrano's",
         "city": "Westerly",
         "state": "RI"
     ])
     
-    pizzeriasRef.document().setData([
+    pizzeriasRef.document("Vittoria's").setData([
         "name": "Vittoria's",
         "city": "Westerly",
         "state": "RI"
     ])
 
-    pizzeriasRef.document().setData([
+    pizzeriasRef.document("Pizza Today").setData([
            "name": "Pizza Today",
            "city": "Groton",
            "state": "CT"
     ])
 
-    pizzeriasRef.document().setData([
+    pizzeriasRef.document("Midway Pizza").setData([
         "name": "Midway Pizza",
         "city": "Groton",
+        "state": "CT"
+    ])
+}
+
+private func updatePizzerias() {
+    let pizzeriasRef = db.collection("pizzerias")
+    
+    pizzeriasRef.document("Vetrano's").setData([
+        "name": "Vetrano's",
+        "city": "Charlestown",
+        "state": "RI"
+    ])
+    
+    pizzeriasRef.document("Midway Pizza").setData([
+        "name": "New Midway Pizza",
+        "city": "New London",
         "state": "CT"
     ])
 }
