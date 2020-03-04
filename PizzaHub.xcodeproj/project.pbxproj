@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F2B255E240F671C00FFBD29 /* Pizzeria.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2B255D240F671C00FFBD29 /* Pizzeria.swift */; };
+		1F2B2561240F6C8400FFBD29 /* FirebaseSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2B2560240F6C8400FFBD29 /* FirebaseSession.swift */; };
+		1F2B2564240F7D0500FFBD29 /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2B2563240F7D0500FFBD29 /* DebugView.swift */; };
 		1F3C147D23F50FDD007BE17A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F3C147C23F50FDD007BE17A /* GoogleService-Info.plist */; };
 		1F3C147E23F50FDD007BE17A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F3C147C23F50FDD007BE17A /* GoogleService-Info.plist */; };
 		1F3C147F23F50FDD007BE17A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F3C147C23F50FDD007BE17A /* GoogleService-Info.plist */; };
@@ -50,6 +53,9 @@
 		0EDECA0D22A7767D9B9705A9 /* Pods_PizzaHub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PizzaHub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CAE205812ED927A903EF9AF /* Pods-PizzaHub-PizzaHubUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PizzaHub-PizzaHubUITests.debug.xcconfig"; path = "Target Support Files/Pods-PizzaHub-PizzaHubUITests/Pods-PizzaHub-PizzaHubUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		1E0470A0FA4A7EBCDBBD15FB /* Pods-PizzaHub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PizzaHub.release.xcconfig"; path = "Target Support Files/Pods-PizzaHub/Pods-PizzaHub.release.xcconfig"; sourceTree = "<group>"; };
+		1F2B255D240F671C00FFBD29 /* Pizzeria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pizzeria.swift; sourceTree = "<group>"; };
+		1F2B2560240F6C8400FFBD29 /* FirebaseSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseSession.swift; sourceTree = "<group>"; };
+		1F2B2563240F7D0500FFBD29 /* DebugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugView.swift; sourceTree = "<group>"; };
 		1F3C147C23F50FDD007BE17A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1FE3AF5E23F274070050662E /* PizzaHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PizzaHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FE3AF6123F274070050662E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +110,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F2B255F240F6C5F00FFBD29 /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				1F2B2560240F6C8400FFBD29 /* FirebaseSession.swift */,
+			);
+			path = Session;
+			sourceTree = "<group>";
+		};
 		1FE3AF5523F274070050662E = {
 			isa = PBXGroup;
 			children = (
@@ -129,12 +143,14 @@
 		1FE3AF6023F274070050662E /* PizzaHub */ = {
 			isa = PBXGroup;
 			children = (
+				1FE3AF6523F274070050662E /* ContentView.swift */,
+				1F2B2563240F7D0500FFBD29 /* DebugView.swift */,
 				1F3C147C23F50FDD007BE17A /* GoogleService-Info.plist */,
 				1FE3AF9823F278490050662E /* Controller */,
 				1FE3AF9723F278250050662E /* Model */,
+				1F2B255F240F6C5F00FFBD29 /* Session */,
 				1FE3AF6123F274070050662E /* AppDelegate.swift */,
 				1FE3AF6323F274070050662E /* SceneDelegate.swift */,
-				1FE3AF6523F274070050662E /* ContentView.swift */,
 				1FE3AF6723F274090050662E /* Assets.xcassets */,
 				1FE3AF6C23F274090050662E /* LaunchScreen.storyboard */,
 				1FE3AF6F23F274090050662E /* Info.plist */,
@@ -174,6 +190,7 @@
 			children = (
 				1FE3AF9423F2781E0050662E /* ShoppingCart.swift */,
 				1FE3AF9923F278740050662E /* MenuItem.swift */,
+				1F2B255D240F671C00FFBD29 /* Pizzeria.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -221,6 +238,7 @@
 				1FE3AF5B23F274070050662E /* Frameworks */,
 				1FE3AF5C23F274070050662E /* Resources */,
 				29783388846AB47CC70F952B /* [CP] Embed Pods Frameworks */,
+				1DEAB92385B6B6F349F278D6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -259,6 +277,7 @@
 				1FE3AF7C23F2740A0050662E /* Frameworks */,
 				1FE3AF7D23F2740A0050662E /* Resources */,
 				7B64CDBB665061DFB1F1827A /* [CP] Embed Pods Frameworks */,
+				DCE2DE0AC0B8AE08F8A33489 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -344,6 +363,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1DEAB92385B6B6F349F278D6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PizzaHub/Pods-PizzaHub-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PizzaHub/Pods-PizzaHub-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PizzaHub/Pods-PizzaHub-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		29783388846AB47CC70F952B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -444,6 +480,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		DCE2DE0AC0B8AE08F8A33489 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PizzaHub-PizzaHubUITests/Pods-PizzaHub-PizzaHubUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PizzaHub-PizzaHubUITests/Pods-PizzaHub-PizzaHubUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PizzaHub-PizzaHubUITests/Pods-PizzaHub-PizzaHubUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -454,9 +507,12 @@
 				1FE3AF9523F2781E0050662E /* ShoppingCart.swift in Sources */,
 				1FE3AF9223F2772A0050662E /* OrderManager.swift in Sources */,
 				1FE3AF6223F274070050662E /* AppDelegate.swift in Sources */,
+				1F2B2564240F7D0500FFBD29 /* DebugView.swift in Sources */,
 				1FE3AF9A23F278740050662E /* MenuItem.swift in Sources */,
 				1FE3AF6423F274070050662E /* SceneDelegate.swift in Sources */,
+				1F2B2561240F6C8400FFBD29 /* FirebaseSession.swift in Sources */,
 				1FE3AF6623F274070050662E /* ContentView.swift in Sources */,
+				1F2B255E240F671C00FFBD29 /* Pizzeria.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
