@@ -13,17 +13,23 @@ struct ContentView: View {
     @ObservedObject var session = FirebaseSession()
 
     var body: some View {
-        VStack(alignment: .leading) {
-            Text("Pizzerias")
-                .font(.largeTitle)
-            List {
-                ForEach(self.session.pizzerias) { pizzeria in
-                    Text(pizzeria.name)
+        NavigationView {
+            Group {
+                VStack {
+                    NavigationLink(destination: AddPizzeria()) {
+                        Text("Add Pizzeria")
+                    }
+                    List {
+                        ForEach(self.session.pizzerias) { pizzeria in
+                            Text(pizzeria.name)
+                        }
+                    }
                 }
             }
             .onAppear(perform: initSession)
+            .navigationBarTitle(Text("Pizzerias"))
+            .padding()
         }
-        .padding()
     }
     
     func initSession() {

@@ -15,6 +15,7 @@ class FirebaseSession: ObservableObject {
     let db: Firestore = Firestore.firestore()
     
     func listen() {
+        self.pizzerias = []
         self.getPizzerias()
     }
     
@@ -30,5 +31,16 @@ class FirebaseSession: ObservableObject {
                 }
             }
         }
+    }
+    
+    func addPizzeria(pizzeria: Pizzeria) {
+        print("adding pizzeria: \(pizzeria)")
+        let pizzeriasRef = db.collection("pizzerias")
+        
+        pizzeriasRef.document().setData([
+            "name": pizzeria.name,
+            "city": pizzeria.city,
+            "state": pizzeria.state
+        ])
     }
 }
