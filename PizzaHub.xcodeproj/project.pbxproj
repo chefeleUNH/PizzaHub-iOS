@@ -118,6 +118,15 @@
 			path = Session;
 			sourceTree = "<group>";
 		};
+		1F2B25652410AEA400FFBD29 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1FE3AF6523F274070050662E /* ContentView.swift */,
+				1F2B2563240F7D0500FFBD29 /* DebugView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		1FE3AF5523F274070050662E = {
 			isa = PBXGroup;
 			children = (
@@ -143,11 +152,10 @@
 		1FE3AF6023F274070050662E /* PizzaHub */ = {
 			isa = PBXGroup;
 			children = (
-				1FE3AF6523F274070050662E /* ContentView.swift */,
-				1F2B2563240F7D0500FFBD29 /* DebugView.swift */,
 				1F3C147C23F50FDD007BE17A /* GoogleService-Info.plist */,
 				1FE3AF9823F278490050662E /* Controller */,
 				1FE3AF9723F278250050662E /* Model */,
+				1F2B25652410AEA400FFBD29 /* Views */,
 				1F2B255F240F6C5F00FFBD29 /* Session */,
 				1FE3AF6123F274070050662E /* AppDelegate.swift */,
 				1FE3AF6323F274070050662E /* SceneDelegate.swift */,
