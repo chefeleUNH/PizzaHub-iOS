@@ -119,9 +119,8 @@ private func deleteCollection(collection: String) {
     }
 }
 
-
 struct DebugView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        DebugView()
     }
 }

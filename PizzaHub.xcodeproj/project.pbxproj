@@ -10,10 +10,10 @@
 		1F2B255E240F671C00FFBD29 /* Pizzeria.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2B255D240F671C00FFBD29 /* Pizzeria.swift */; };
 		1F2B2561240F6C8400FFBD29 /* FirebaseSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2B2560240F6C8400FFBD29 /* FirebaseSession.swift */; };
 		1F2B2564240F7D0500FFBD29 /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2B2563240F7D0500FFBD29 /* DebugView.swift */; };
-		1F2B25672410AED800FFBD29 /* AddPizzeria.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2B25662410AED800FFBD29 /* AddPizzeria.swift */; };
 		1F3C147D23F50FDD007BE17A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F3C147C23F50FDD007BE17A /* GoogleService-Info.plist */; };
 		1F3C147E23F50FDD007BE17A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F3C147C23F50FDD007BE17A /* GoogleService-Info.plist */; };
 		1F3C147F23F50FDD007BE17A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F3C147C23F50FDD007BE17A /* GoogleService-Info.plist */; };
+		1F54CFFB241B21B000FFE397 /* FirebaseSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2B2560240F6C8400FFBD29 /* FirebaseSession.swift */; };
 		1FE3AF6223F274070050662E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE3AF6123F274070050662E /* AppDelegate.swift */; };
 		1FE3AF6423F274070050662E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE3AF6323F274070050662E /* SceneDelegate.swift */; };
 		1FE3AF6623F274070050662E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE3AF6523F274070050662E /* ContentView.swift */; };
@@ -22,8 +22,6 @@
 		1FE3AF6E23F274090050662E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FE3AF6C23F274090050662E /* LaunchScreen.storyboard */; };
 		1FE3AF7923F2740A0050662E /* PizzaHubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE3AF7823F2740A0050662E /* PizzaHubTests.swift */; };
 		1FE3AF8423F2740A0050662E /* PizzaHubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE3AF8323F2740A0050662E /* PizzaHubUITests.swift */; };
-		1FE3AF9223F2772A0050662E /* OrderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE3AF9123F2772A0050662E /* OrderManager.swift */; };
-		1FE3AF9323F2772A0050662E /* OrderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE3AF9123F2772A0050662E /* OrderManager.swift */; };
 		1FE3AF9523F2781E0050662E /* ShoppingCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE3AF9423F2781E0050662E /* ShoppingCart.swift */; };
 		1FE3AF9623F2781E0050662E /* ShoppingCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE3AF9423F2781E0050662E /* ShoppingCart.swift */; };
 		1FE3AF9A23F278740050662E /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE3AF9923F278740050662E /* MenuItem.swift */; };
@@ -57,7 +55,6 @@
 		1F2B255D240F671C00FFBD29 /* Pizzeria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pizzeria.swift; sourceTree = "<group>"; };
 		1F2B2560240F6C8400FFBD29 /* FirebaseSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseSession.swift; sourceTree = "<group>"; };
 		1F2B2563240F7D0500FFBD29 /* DebugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugView.swift; sourceTree = "<group>"; };
-		1F2B25662410AED800FFBD29 /* AddPizzeria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPizzeria.swift; sourceTree = "<group>"; };
 		1F3C147C23F50FDD007BE17A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1FE3AF5E23F274070050662E /* PizzaHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PizzaHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FE3AF6123F274070050662E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -73,7 +70,6 @@
 		1FE3AF7F23F2740A0050662E /* PizzaHubUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PizzaHubUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FE3AF8323F2740A0050662E /* PizzaHubUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaHubUITests.swift; sourceTree = "<group>"; };
 		1FE3AF8523F2740A0050662E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1FE3AF9123F2772A0050662E /* OrderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderManager.swift; sourceTree = "<group>"; };
 		1FE3AF9423F2781E0050662E /* ShoppingCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCart.swift; sourceTree = "<group>"; };
 		1FE3AF9923F278740050662E /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		20236EEECA691A0704DEE4A0 /* Pods-PizzaHub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PizzaHub.debug.xcconfig"; path = "Target Support Files/Pods-PizzaHub/Pods-PizzaHub.debug.xcconfig"; sourceTree = "<group>"; };
@@ -112,22 +108,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1F2B255F240F6C5F00FFBD29 /* Session */ = {
-			isa = PBXGroup;
-			children = (
-				1F2B2560240F6C8400FFBD29 /* FirebaseSession.swift */,
-			);
-			path = Session;
-			sourceTree = "<group>";
-		};
-		1F2B25652410AEA400FFBD29 /* Views */ = {
+		1F2B25652410AEA400FFBD29 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				1FE3AF6523F274070050662E /* ContentView.swift */,
 				1F2B2563240F7D0500FFBD29 /* DebugView.swift */,
-				1F2B25662410AED800FFBD29 /* AddPizzeria.swift */,
 			);
-			path = Views;
+			path = View;
 			sourceTree = "<group>";
 		};
 		1FE3AF5523F274070050662E = {
@@ -155,16 +142,15 @@
 		1FE3AF6023F274070050662E /* PizzaHub */ = {
 			isa = PBXGroup;
 			children = (
-				1F3C147C23F50FDD007BE17A /* GoogleService-Info.plist */,
-				1FE3AF9823F278490050662E /* Controller */,
 				1FE3AF9723F278250050662E /* Model */,
-				1F2B25652410AEA400FFBD29 /* Views */,
-				1F2B255F240F6C5F00FFBD29 /* Session */,
+				1F2B25652410AEA400FFBD29 /* View */,
+				1FE3AF9823F278490050662E /* Controller */,
 				1FE3AF6123F274070050662E /* AppDelegate.swift */,
 				1FE3AF6323F274070050662E /* SceneDelegate.swift */,
 				1FE3AF6723F274090050662E /* Assets.xcassets */,
 				1FE3AF6C23F274090050662E /* LaunchScreen.storyboard */,
 				1FE3AF6F23F274090050662E /* Info.plist */,
+				1F3C147C23F50FDD007BE17A /* GoogleService-Info.plist */,
 				1FE3AF6923F274090050662E /* Preview Content */,
 			);
 			path = PizzaHub;
@@ -209,7 +195,7 @@
 		1FE3AF9823F278490050662E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				1FE3AF9123F2772A0050662E /* OrderManager.swift */,
+				1F2B2560240F6C8400FFBD29 /* FirebaseSession.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -480,8 +466,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FE3AF9523F2781E0050662E /* ShoppingCart.swift in Sources */,
-				1F2B25672410AED800FFBD29 /* AddPizzeria.swift in Sources */,
-				1FE3AF9223F2772A0050662E /* OrderManager.swift in Sources */,
 				1FE3AF6223F274070050662E /* AppDelegate.swift in Sources */,
 				1F2B2564240F7D0500FFBD29 /* DebugView.swift in Sources */,
 				1FE3AF9A23F278740050662E /* MenuItem.swift in Sources */,
@@ -496,10 +480,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1FE3AF9323F2772A0050662E /* OrderManager.swift in Sources */,
 				1FE3AF9B23F278740050662E /* MenuItem.swift in Sources */,
 				1FE3AF9623F2781E0050662E /* ShoppingCart.swift in Sources */,
 				1FE3AF7923F2740A0050662E /* PizzaHubTests.swift in Sources */,
+				1F54CFFB241B21B000FFE397 /* FirebaseSession.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
