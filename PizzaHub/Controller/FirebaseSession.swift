@@ -27,14 +27,23 @@ class FirebaseSession: ObservableObject {
                 return
             }
             snapshot.documentChanges.forEach { diff in
-                
                 if (diff.type == .added) {
-                    print("New pizzeria: \(diff.document.data())")
+                    print("Pizzeria added: \(diff.document.data())")
                     let pizzeria = Pizzeria(id: diff.document.documentID,
                                             name: diff.document.get("name") as! String,
                                             city: diff.document.get("city") as! String,
                                             state: diff.document.get("state") as! String)
                     self.pizzerias.append(pizzeria)
+                }
+                if (diff.type == .modified) {
+                    print("Pizzeria modified: \(diff.document.data())")
+                    guard let modifiedIndex = self.pizzerias.firstIndex(where: { $0.id == diff.document.documentID }) else {
+                        print("Could not find modified pizzeria in data model")
+                        return
+                    }
+                    self.pizzerias[modifiedIndex].name = diff.document.get("name") as! String
+                    self.pizzerias[modifiedIndex].city = diff.document.get("city") as! String
+                    self.pizzerias[modifiedIndex].state = diff.document.get("state") as! String
                 }
             }
         }
