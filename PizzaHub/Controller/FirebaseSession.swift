@@ -56,4 +56,13 @@ class FirebaseSession: ObservableObject {
             }
         }
     }
+    
+    // Reference link: https://firebase.google.com/docs/firestore/manage-data/add-data
+    func createPizzeria(name: String, city: String, state: String) {
+        db.collection("pizzerias").document().setData([
+            "name": name,
+            "city": city,
+            "state": state
+        ])
+    }
 }

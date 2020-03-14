@@ -13,10 +13,18 @@ struct ContentView: View {
     @ObservedObject private var fbSession = firebaseSession
 
     var body: some View {
-        List {
-            ForEach(fbSession.pizzerias) { pizzeria in
-                Text(pizzeria.name)
+        NavigationView {
+            VStack {
+                NavigationLink(destination: AddPizzeriaView()) {
+                    Text("Add Pizzeria")
+                }
+                List {
+                    ForEach(fbSession.pizzerias) { pizzeria in
+                        Text(pizzeria.name)
+                    }
+                }
             }
+            .navigationBarTitle(Text("Pizzerias"))
         }
     }
 }
