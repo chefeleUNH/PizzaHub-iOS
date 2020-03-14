@@ -12,8 +12,7 @@ let firebaseSession = FirebaseSession() // singleton
 
 class FirebaseSession: ObservableObject {
     @Published var pizzerias = [Pizzeria]()
-    
-    let db = Firestore.firestore()
+    private let pizzeriasCollection = Firestore.firestore().collection("pizzerias")
         
     init() {
         readData()
@@ -21,7 +20,7 @@ class FirebaseSession: ObservableObject {
     
     // Reference link : https://firebase.google.com/docs/firestore/query-data/listen
     func readData() {
-        db.collection("pizzerias").addSnapshotListener { querySnapshot, error in
+        pizzeriasCollection.addSnapshotListener { querySnapshot, error in
             guard let snapshot = querySnapshot else {
                 print("Error fetching snapshots: \(error!)")
                 return
@@ -59,10 +58,23 @@ class FirebaseSession: ObservableObject {
     
     // Reference link: https://firebase.google.com/docs/firestore/manage-data/add-data
     func createPizzeria(name: String, city: String, state: String) {
-        db.collection("pizzerias").document().setData([
+        pizzeriasCollection.document().setData([
             "name": name,
             "city": city,
             "state": state
         ])
+    }
+    
+    // Reference link: https://firebase.google.com/docs/firestore/manage-data/delete-data
+    func deletePizzeria(index: Int) {
+        print("Deleting pizzeria: \(pizzerias[index])")
+        let id = self.pizzerias[index].id
+        pizzeriasCollection.document(id).delete() { err in
+            if let err = err {
+                print("Error removing document: \(err)")
+            } else {
+                print("Document successfully removed!")
+            }
+        }
     }
 }

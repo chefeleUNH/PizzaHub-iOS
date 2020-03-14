@@ -21,11 +21,16 @@ struct ContentView: View {
                 List {
                     ForEach(fbSession.pizzerias) { pizzeria in
                         Text(pizzeria.name)
-                    }
+                    }.onDelete(perform: removeRows)
                 }
             }
             .navigationBarTitle(Text("Pizzerias"))
+            .navigationBarItems(leading: EditButton())
         }
+    }
+    
+    func removeRows(at offsets: IndexSet) {
+        fbSession.deletePizzeria(index: offsets.first!)
     }
 }
 
