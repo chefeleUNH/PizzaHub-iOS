@@ -45,6 +45,14 @@ class FirebaseSession: ObservableObject {
                     self.pizzerias[modifiedIndex].city = diff.document.get("city") as! String
                     self.pizzerias[modifiedIndex].state = diff.document.get("state") as! String
                 }
+                if (diff.type == .removed) {
+                    print("Pizzeria removed: \(diff.document.data())")
+                    guard let removedIndex = self.pizzerias.firstIndex(where: { $0.id == diff.document.documentID }) else {
+                        print("Could not find removed pizzeria in data model")
+                        return
+                    }
+                    self.pizzerias.remove(at: removedIndex)
+                }
             }
         }
     }
