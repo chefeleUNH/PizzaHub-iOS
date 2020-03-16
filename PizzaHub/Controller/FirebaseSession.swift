@@ -15,11 +15,11 @@ class FirebaseSession: ObservableObject {
     private let pizzeriasCollection = Firestore.firestore().collection("pizzerias")
         
     init() {
-        readData()
+        listenForChanges()
     }
     
     // Reference link : https://firebase.google.com/docs/firestore/query-data/listen
-    func readData() {
+    func listenForChanges() {
         pizzeriasCollection.addSnapshotListener { querySnapshot, error in
             guard let snapshot = querySnapshot else {
                 print("Error fetching snapshots: \(error!)")

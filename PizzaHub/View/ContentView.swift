@@ -20,7 +20,9 @@ struct ContentView: View {
                 }
                 List {
                     ForEach(fbSession.pizzerias) { pizzeria in
-                        Text(pizzeria.name)
+                        NavigationLink(destination: PizzeriaDetailView(pizzeria: pizzeria)) {
+                            Text(pizzeria.name)
+                        }
                     }.onDelete(perform: removeRows)
                 }
             }
