@@ -12,24 +12,26 @@ struct PizzeriaDetailView: View {
     let pizzeria: Pizzeria
     
     var body: some View {
-        VStack(alignment: .leading) {
-            Text(pizzeria.name)
-                .font(.largeTitle)
+        VStack {
             HStack {
                 Text(pizzeria.city)
                 Text(pizzeria.state)
                 Spacer()
             }
-        }.padding()
+            Spacer()
+        }
+        .padding()
+        .navigationBarTitle(pizzeria.name)
     }
 }
 
 struct PizzeriaDetailView_Previews: PreviewProvider {
     static var previews: some View {
         PizzeriaDetailView(pizzeria:
-            Pizzeria(id: "1234",
+            Pizzeria(id: "1",
                      name: "Vittoria's",
                      city: "Westerly",
-                     state: "RI"))
+                     state: "RI")
+        )
     }
 }

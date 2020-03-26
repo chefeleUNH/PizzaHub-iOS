@@ -18,7 +18,7 @@ class ShoppingCart {
     func returnTotal() -> Double {
         var total: Double = 0.0
         for item in items {
-            total += item.price
+            total += Double(item.price)!
         }
         return total
     }

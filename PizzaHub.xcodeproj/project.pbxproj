@@ -8,12 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		1F2B255E240F671C00FFBD29 /* Pizzeria.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2B255D240F671C00FFBD29 /* Pizzeria.swift */; };
-		1F2B2561240F6C8400FFBD29 /* FirebaseSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2B2560240F6C8400FFBD29 /* FirebaseSession.swift */; };
 		1F2B2564240F7D0500FFBD29 /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2B2563240F7D0500FFBD29 /* DebugView.swift */; };
 		1F3C147D23F50FDD007BE17A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F3C147C23F50FDD007BE17A /* GoogleService-Info.plist */; };
 		1F3C147E23F50FDD007BE17A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F3C147C23F50FDD007BE17A /* GoogleService-Info.plist */; };
 		1F3C147F23F50FDD007BE17A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F3C147C23F50FDD007BE17A /* GoogleService-Info.plist */; };
-		1F54CFFB241B21B000FFE397 /* FirebaseSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2B2560240F6C8400FFBD29 /* FirebaseSession.swift */; };
+		1FAC8EA4242B09D600416DA7 /* FirebaseCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAC8EA3242B09D600416DA7 /* FirebaseCollection.swift */; };
 		1FD3D675241CA21C005CF9AB /* AddPizzeriaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD3D674241CA21C005CF9AB /* AddPizzeriaView.swift */; };
 		1FD3D676241CAAAB005CF9AB /* Pizzeria.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2B255D240F671C00FFBD29 /* Pizzeria.swift */; };
 		1FD3D678241D8433005CF9AB /* PizzeriaDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD3D677241D8433005CF9AB /* PizzeriaDetailView.swift */; };
@@ -29,6 +28,7 @@
 		1FE3AF9623F2781E0050662E /* ShoppingCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE3AF9423F2781E0050662E /* ShoppingCart.swift */; };
 		1FE3AF9A23F278740050662E /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE3AF9923F278740050662E /* MenuItem.swift */; };
 		1FE3AF9B23F278740050662E /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE3AF9923F278740050662E /* MenuItem.swift */; };
+		1FF1CF4C2430459B00ABCE97 /* FirebaseCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAC8EA3242B09D600416DA7 /* FirebaseCollection.swift */; };
 		C499B40E51E733C9FEA1122D /* Pods_PizzaHub_PizzaHubUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A39E8D990579EC1BBDE68B3D /* Pods_PizzaHub_PizzaHubUITests.framework */; };
 		D0AA8F069F5576E05C3C3508 /* Pods_PizzaHub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EDECA0D22A7767D9B9705A9 /* Pods_PizzaHub.framework */; };
 		F5A6E54604814E95178C5BBA /* Pods_PizzaHubTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB2689E385E4C614B9D57301 /* Pods_PizzaHubTests.framework */; };
@@ -56,9 +56,9 @@
 		1CAE205812ED927A903EF9AF /* Pods-PizzaHub-PizzaHubUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PizzaHub-PizzaHubUITests.debug.xcconfig"; path = "Target Support Files/Pods-PizzaHub-PizzaHubUITests/Pods-PizzaHub-PizzaHubUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		1E0470A0FA4A7EBCDBBD15FB /* Pods-PizzaHub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PizzaHub.release.xcconfig"; path = "Target Support Files/Pods-PizzaHub/Pods-PizzaHub.release.xcconfig"; sourceTree = "<group>"; };
 		1F2B255D240F671C00FFBD29 /* Pizzeria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pizzeria.swift; sourceTree = "<group>"; };
-		1F2B2560240F6C8400FFBD29 /* FirebaseSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseSession.swift; sourceTree = "<group>"; };
 		1F2B2563240F7D0500FFBD29 /* DebugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugView.swift; sourceTree = "<group>"; };
 		1F3C147C23F50FDD007BE17A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1FAC8EA3242B09D600416DA7 /* FirebaseCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseCollection.swift; sourceTree = "<group>"; };
 		1FD3D674241CA21C005CF9AB /* AddPizzeriaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPizzeriaView.swift; sourceTree = "<group>"; };
 		1FD3D677241D8433005CF9AB /* PizzeriaDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzeriaDetailView.swift; sourceTree = "<group>"; };
 		1FE3AF5E23F274070050662E /* PizzaHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PizzaHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,7 +151,6 @@
 			children = (
 				1FE3AF9723F278250050662E /* Model */,
 				1F2B25652410AEA400FFBD29 /* View */,
-				1FE3AF9823F278490050662E /* Controller */,
 				1FE3AF6123F274070050662E /* AppDelegate.swift */,
 				1FE3AF6323F274070050662E /* SceneDelegate.swift */,
 				1FE3AF6723F274090050662E /* Assets.xcassets */,
@@ -192,19 +191,12 @@
 		1FE3AF9723F278250050662E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1FAC8EA3242B09D600416DA7 /* FirebaseCollection.swift */,
 				1FE3AF9423F2781E0050662E /* ShoppingCart.swift */,
 				1FE3AF9923F278740050662E /* MenuItem.swift */,
 				1F2B255D240F671C00FFBD29 /* Pizzeria.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		1FE3AF9823F278490050662E /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				1F2B2560240F6C8400FFBD29 /* FirebaseSession.swift */,
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 		A8F9A1F71635D03D007B9A62 /* Pods */ = {
@@ -476,8 +468,8 @@
 				1FE3AF6223F274070050662E /* AppDelegate.swift in Sources */,
 				1F2B2564240F7D0500FFBD29 /* DebugView.swift in Sources */,
 				1FE3AF9A23F278740050662E /* MenuItem.swift in Sources */,
+				1FAC8EA4242B09D600416DA7 /* FirebaseCollection.swift in Sources */,
 				1FE3AF6423F274070050662E /* SceneDelegate.swift in Sources */,
-				1F2B2561240F6C8400FFBD29 /* FirebaseSession.swift in Sources */,
 				1FE3AF6623F274070050662E /* ContentView.swift in Sources */,
 				1FD3D675241CA21C005CF9AB /* AddPizzeriaView.swift in Sources */,
 				1F2B255E240F671C00FFBD29 /* Pizzeria.swift in Sources */,
@@ -489,10 +481,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FF1CF4C2430459B00ABCE97 /* FirebaseCollection.swift in Sources */,
 				1FE3AF9B23F278740050662E /* MenuItem.swift in Sources */,
 				1FE3AF9623F2781E0050662E /* ShoppingCart.swift in Sources */,
 				1FE3AF7923F2740A0050662E /* PizzaHubTests.swift in Sources */,
-				1F54CFFB241B21B000FFE397 /* FirebaseSession.swift in Sources */,
 				1FD3D676241CAAAB005CF9AB /* Pizzeria.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

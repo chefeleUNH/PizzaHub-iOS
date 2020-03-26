@@ -23,43 +23,33 @@ class PizzaHubTests: XCTestCase {
 
     func testMenuItemInitializationSucceeds() {
         // Cheap item
-        let smallPepperoniItem = MenuItem.init(name: "Small Pepperoni", price: 12.50)
+        let smallPepperoniItem = MenuItem(id: "1234", name: "Small Pepperoni", price: "12.50")
         XCTAssertNotNil(smallPepperoniItem)
         
         // Expensive item
-        let largeSupremeItem = MenuItem.init(name: "Large Supreme", price: 27.00)
+        let largeSupremeItem = MenuItem(id: "1234", name: "Large Supreme", price: "27.00")
         XCTAssertNotNil(largeSupremeItem)
-    }
-    
-    func testMenuItemInitializationFails() {
-        // Item with no description
-        let noDescriptionItem = MenuItem.init(name: "", price: 10.00)
-        XCTAssertNil(noDescriptionItem)
-        
-        // Item with negative price item
-        let negativePriceItem = MenuItem.init(name: "Large Supreme", price: -5.00)
-        XCTAssertNil(negativePriceItem)
     }
     
     // MARK: ShoppingCart Class Tests
     
     func testShoppingCartAddItem() {
-        let smallPepperoniItem = MenuItem.init(name: "Small Pepperoni", price: 12.50)
-        let largeSupremeItem = MenuItem.init(name: "Large Supreme", price: 27.00)
-        let cart = ShoppingCart.init()
+        let smallPepperoniItem = MenuItem(id: "1234", name: "Small Pepperoni", price: "12.50")
+        let largeSupremeItem = MenuItem(id: "1234", name: "Large Supreme", price: "27.00")
+        let cart = ShoppingCart()
         XCTAssertEqual(0, cart.items.count)
-        cart.addItem(item: smallPepperoniItem!)
+        cart.addItem(item: smallPepperoniItem)
         XCTAssertEqual(1, cart.items.count)
-        cart.addItem(item: largeSupremeItem!)
+        cart.addItem(item: largeSupremeItem)
         XCTAssertEqual(2, cart.items.count)
     }
     
     func testShoppingCartReturnTotal() {
-        let smallPepperoniItem = MenuItem.init(name: "Small Pepperoni", price: 12.50)
-        let largeSupremeItem = MenuItem.init(name: "Large Supreme", price: 27.00)
-        let cart = ShoppingCart.init()
-        cart.addItem(item: smallPepperoniItem!)
-        cart.addItem(item: largeSupremeItem!)
+        let smallPepperoniItem = MenuItem(id: "1234", name: "Small Pepperoni", price: "12.50")
+        let largeSupremeItem = MenuItem(id: "1234", name: "Large Supreme", price: "27.00")
+        let cart = ShoppingCart()
+        cart.addItem(item: smallPepperoniItem)
+        cart.addItem(item: largeSupremeItem)
         XCTAssertEqual(39.50, cart.returnTotal())
     }
 

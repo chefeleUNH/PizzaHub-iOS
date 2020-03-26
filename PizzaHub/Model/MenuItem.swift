@@ -8,15 +8,8 @@
 
 import UIKit
 
-class MenuItem {
+struct MenuItem: Identifiable {
+    var id: String
     var name: String
-    var price: Double
-    
-    init?(name: String, price: Double) {
-        if name.isEmpty || price < 0 {
-            return nil
-        }
-        self.name = name
-        self.price = price
-    }
+    var price: String
 }

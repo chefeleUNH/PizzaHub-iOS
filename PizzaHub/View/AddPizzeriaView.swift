@@ -9,7 +9,6 @@
 import SwiftUI
 
 struct AddPizzeriaView: View {
-    @ObservedObject private var fbSession = firebaseSession
     @Environment(\.presentationMode) var presentationMode
     @State private var name = ""
     @State private var city = ""
@@ -21,31 +20,31 @@ struct AddPizzeriaView: View {
                 HStack {
                     Text("Pizzeria Name")
                     TextField("Enter Name", text: $name)
-                    .padding()
                 }
                 HStack {
                     Text("Pizzeria City")
                     TextField("Enter City", text: $city)
-                    .padding()
                 }
                 HStack {
                     Text("Pizzeria State")
                     TextField("Enter State", text: $state)
-                    .padding()
                 }
                 Button(action: {
                     self.addPizzeria()
                 }) {
                     Text("Add")
                 }
+                Spacer()
             }
+            .navigationBarTitle("Add Pizzeria")
         }
         .padding()
     }
     
     func addPizzeria() {
         if !name.isEmpty && !city.isEmpty && !state.isEmpty {
-            fbSession.createPizzeria(name: name, city: city, state: state)
+            let pizzeria = Pizzeria(id: "", name: name, city: city, state: state)
+            pizzeriasCollectionRef.addDocument(data: pizzeria.dictionary)
             dismiss()
         }
     }

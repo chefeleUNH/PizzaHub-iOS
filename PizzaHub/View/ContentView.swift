@@ -9,9 +9,12 @@
 import SwiftUI
 import FirebaseFirestore
 
-struct ContentView: View {
-    @ObservedObject private var fbSession = firebaseSession
+let pizzeriasCollectionRef = Firestore.firestore().collection("pizzerias")
 
+struct ContentView: View {
+    
+    @ObservedObject private var pizzerias = FirebaseCollection<Pizzeria>(collectionRef: pizzeriasCollectionRef)
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -19,21 +22,31 @@ struct ContentView: View {
                     Text("Add Pizzeria")
                 }
                 List {
-                    ForEach(fbSession.pizzerias) { pizzeria in
+                    ForEach(pizzerias.items) { pizzeria in
                         NavigationLink(destination: PizzeriaDetailView(pizzeria: pizzeria)) {
                             Text(pizzeria.name)
                         }
-                    }.onDelete(perform: removeRows)
+                    }.onDelete(perform: deletePizzeria)
                 }
             }
-            .navigationBarTitle(Text("Pizzerias"))
+            .navigationBarTitle("Pizzerias")
             .navigationBarItems(leading: EditButton())
         }
     }
     
-    func removeRows(at offsets: IndexSet) {
-        fbSession.deletePizzeria(index: offsets.first!)
+    func deletePizzeria(at offsets: IndexSet) {
+        let index = offsets.first!
+        print("Deleting pizzeria: \(pizzerias.items[index])")
+        let id = pizzerias.items[index].id
+        pizzeriasCollectionRef.document(id).delete() { error in
+            if let error = error {
+                print("Error removing document: \(error)")
+            } else {
+                print("Document successfully removed")
+            }
+        }
     }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
