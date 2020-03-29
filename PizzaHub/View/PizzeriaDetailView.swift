@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct PizzeriaDetailView: View {
-    let pizzeria: Pizzeria
+    @ObservedObject var pizzeria: Pizzeria
     
     var body: some View {
         VStack {
@@ -17,6 +17,9 @@ struct PizzeriaDetailView: View {
                 Text(pizzeria.city)
                 Text(pizzeria.state)
                 Spacer()
+            }
+            NavigationLink(destination: EditPizzeriaView(pizzeria: pizzeria)) {
+                Text("Edit")
             }
             Spacer()
         }
@@ -28,10 +31,9 @@ struct PizzeriaDetailView: View {
 struct PizzeriaDetailView_Previews: PreviewProvider {
     static var previews: some View {
         PizzeriaDetailView(pizzeria:
-            Pizzeria(id: "1",
-                     name: "Vittoria's",
-                     city: "Westerly",
-                     state: "RI")
+            Pizzeria(id: "1", data: ["name": "Vittoria's",
+                                     "city": "Westerly",
+                                     "state": "RI"])!
         )
     }
 }

@@ -43,8 +43,8 @@ struct AddPizzeriaView: View {
     
     func addPizzeria() {
         if !name.isEmpty && !city.isEmpty && !state.isEmpty {
-            let pizzeria = Pizzeria(id: "", name: name, city: city, state: state)
-            pizzeriasCollectionRef.addDocument(data: pizzeria.dictionary)
+            let data = ["name": name, "city": city, "state": state]
+            pizzeriasCollectionRef.addDocument(data: data)
             dismiss()
         }
     }

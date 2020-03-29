@@ -12,7 +12,6 @@ import FirebaseFirestore
 let pizzeriasCollectionRef = Firestore.firestore().collection("pizzerias")
 
 struct ContentView: View {
-    
     @ObservedObject private var pizzerias = FirebaseCollection<Pizzeria>(collectionRef: pizzeriasCollectionRef)
     
     var body: some View {
