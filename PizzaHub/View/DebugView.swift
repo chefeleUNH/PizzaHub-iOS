@@ -63,13 +63,13 @@ private func createPizzerias() {
         "city": "Westerly",
         "state": "RI"
     ])
-
+    
     pizzeriasRef.document("Pizza Today").setData([
-           "name": "Pizza Today",
-           "city": "Groton",
-           "state": "CT"
+        "name": "Pizza Today",
+        "city": "Groton",
+        "state": "CT"
     ])
-
+    
     pizzeriasRef.document("Midway Pizza").setData([
         "name": "Midway Pizza",
         "city": "Groton",
@@ -111,7 +111,7 @@ private func deleteCollection(collection: String) {
             print("Error getting documents: \(err)")
             return
         }
-
+        
         for document in querySnapshot!.documents {
             print("Deleting \(document.documentID) => \(document.data())")
             document.reference.delete()

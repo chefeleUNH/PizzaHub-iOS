@@ -15,11 +15,11 @@ struct Pizzeria {
     var state: String
     
     var dictionary: [String: Any] {
-      return [
-        "name": name,
-        "city": city,
-        "state": state
-      ]
+        return [
+            "name": name,
+            "city": city,
+            "state": state
+        ]
     }
 }
 
@@ -29,8 +29,8 @@ extension Pizzeria: FirebaseCodable {
         guard let name = dictionary["name"] as? String,
             let city = dictionary["city"] as? String,
             let state = dictionary["state"] as? String
-        else {
-            return nil
+            else {
+                return nil
         }
         
         self.init(id: id,

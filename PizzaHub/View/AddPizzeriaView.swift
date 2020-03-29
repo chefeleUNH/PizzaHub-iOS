@@ -13,7 +13,7 @@ struct AddPizzeriaView: View {
     @State private var name = ""
     @State private var city = ""
     @State private var state = ""
-
+    
     var body: some View {
         Group {
             VStack {
