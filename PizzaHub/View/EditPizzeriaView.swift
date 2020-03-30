@@ -14,17 +14,17 @@ struct EditPizzeriaView: View {
     
     var body: some View {
         Group {
-            VStack {
+            VStack(spacing: 25) {
                 HStack {
-                    Text("Pizzeria Name")
+                    Text("Pizzeria Name:")
                     TextField("Enter Name", text: $pizzeria.name)
                 }
                 HStack {
-                    Text("Pizzeria City")
+                    Text("Pizzeria City:")
                     TextField("Enter City", text: $pizzeria.city)
                 }
                 HStack {
-                    Text("Pizzeria State")
+                    Text("Pizzeria State:")
                     TextField("Enter State", text: $pizzeria.state)
                 }
                 Button(action: {
@@ -34,7 +34,7 @@ struct EditPizzeriaView: View {
                 }
                 Spacer()
             }
-            .navigationBarTitle("Edit Pizzeria")
+            .navigationBarTitle("Edit \(pizzeria.name)")
         }
         .padding()
     }

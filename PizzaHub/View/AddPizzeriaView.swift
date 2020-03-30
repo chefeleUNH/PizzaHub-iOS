@@ -16,17 +16,17 @@ struct AddPizzeriaView: View {
     
     var body: some View {
         Group {
-            VStack {
+            VStack(spacing: 25) {
                 HStack {
-                    Text("Pizzeria Name")
+                    Text("Pizzeria Name:")
                     TextField("Enter Name", text: $name)
                 }
                 HStack {
-                    Text("Pizzeria City")
+                    Text("Pizzeria City:")
                     TextField("Enter City", text: $city)
                 }
                 HStack {
-                    Text("Pizzeria State")
+                    Text("Pizzeria State:")
                     TextField("Enter State", text: $state)
                 }
                 Button(action: {
