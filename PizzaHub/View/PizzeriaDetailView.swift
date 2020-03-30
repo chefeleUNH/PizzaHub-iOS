@@ -7,9 +7,18 @@
 //
 
 import SwiftUI
+import FirebaseFirestore
 
 struct PizzeriaDetailView: View {
     @ObservedObject var pizzeria: Pizzeria
+    @ObservedObject private var menu: FirebaseCollection<MenuItem>
+    private var menuCollectionRef: CollectionReference
+    
+    init(pizzeria: Pizzeria) {
+        self.pizzeria = pizzeria
+        self.menuCollectionRef = pizzeriasCollectionRef.document(pizzeria.id).collection("menu")
+        self.menu = FirebaseCollection<MenuItem>(collectionRef: menuCollectionRef)
+    }
     
     var body: some View {
         VStack {
@@ -20,6 +29,18 @@ struct PizzeriaDetailView: View {
             }
             NavigationLink(destination: EditPizzeriaView(pizzeria: pizzeria)) {
                 Text("Edit")
+            }
+            Divider()
+            Text("Menu")
+                .font(.largeTitle)
+            List {
+                ForEach(menu.items) { menuItem in
+                    HStack {
+                        Text(menuItem.name)
+                        Spacer()
+                        Text(menuItem.price)
+                    }
+                }
             }
             Spacer()
         }

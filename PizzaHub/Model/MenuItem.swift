@@ -6,10 +6,29 @@
 //  Copyright © 2020 Charles Hefele. All rights reserved.
 //
 
-import UIKit
+import FirebaseFirestore
 
-struct MenuItem: Identifiable {
+class MenuItem: FirebaseCodable {
     var id: String
-    var name: String
-    var price: String
+    @Published var name: String
+    @Published var price: String
+    
+    var data: [String: Any] {
+        return [
+            "name": name,
+            "price": price,
+        ]
+    }
+    
+    required init?(id: String, data: [String : Any]) {
+        guard let name = data["name"] as? String,
+            let price = data["price"] as? String
+            else {
+                return nil
+        }
+        
+        self.id = id
+        self.name = name
+        self.price = price
+    }
 }
