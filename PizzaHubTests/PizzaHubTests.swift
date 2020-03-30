@@ -23,33 +23,33 @@ class PizzaHubTests: XCTestCase {
 
     func testMenuItemInitializationSucceeds() {
         // Cheap item
-        let smallPepperoniItem = MenuItem(id: "1234", name: "Small Pepperoni", price: "12.50")
+        let smallPepperoniItem = MenuItem(id: "1234", data: ["name": "Small Pepperoni", "price": "12.50"])
         XCTAssertNotNil(smallPepperoniItem)
         
         // Expensive item
-        let largeSupremeItem = MenuItem(id: "1234", name: "Large Supreme", price: "27.00")
+        let largeSupremeItem = MenuItem(id: "1234", data: ["name": "Large Supreme", "price": "27.00"])
         XCTAssertNotNil(largeSupremeItem)
     }
     
     // MARK: ShoppingCart Class Tests
     
     func testShoppingCartAddItem() {
-        let smallPepperoniItem = MenuItem(id: "1234", name: "Small Pepperoni", price: "12.50")
-        let largeSupremeItem = MenuItem(id: "1234", name: "Large Supreme", price: "27.00")
+        let smallPepperoniItem = MenuItem(id: "1234", data: ["name": "Small Pepperoni", "price": "12.50"])
+        let largeSupremeItem = MenuItem(id: "1234", data: ["name": "Large Supreme", "price": "27.00"])
         let cart = ShoppingCart()
         XCTAssertEqual(0, cart.items.count)
-        cart.addItem(item: smallPepperoniItem)
+        cart.addItem(item: smallPepperoniItem!)
         XCTAssertEqual(1, cart.items.count)
-        cart.addItem(item: largeSupremeItem)
+        cart.addItem(item: largeSupremeItem!)
         XCTAssertEqual(2, cart.items.count)
     }
     
     func testShoppingCartReturnTotal() {
-        let smallPepperoniItem = MenuItem(id: "1234", name: "Small Pepperoni", price: "12.50")
-        let largeSupremeItem = MenuItem(id: "1234", name: "Large Supreme", price: "27.00")
+        let smallPepperoniItem = MenuItem(id: "1234", data: ["name": "Small Pepperoni", "price": "12.50"])
+        let largeSupremeItem = MenuItem(id: "1234", data: ["name": "Large Supreme", "price": "27.00"])
         let cart = ShoppingCart()
-        cart.addItem(item: smallPepperoniItem)
-        cart.addItem(item: largeSupremeItem)
+        cart.addItem(item: smallPepperoniItem!)
+        cart.addItem(item: largeSupremeItem!)
         XCTAssertEqual(39.50, cart.returnTotal())
     }
 
