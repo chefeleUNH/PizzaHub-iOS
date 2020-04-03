@@ -11,31 +11,25 @@ import XCTest
 
 class PizzaHubTests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-    
-    // MARK: MenuItem Class Tests
-
-    func testMenuItemInitializationSucceeds() {
-        // Cheap item
-        let smallPepperoniItem = MenuItem(id: "1234", data: ["name": "Small Pepperoni", "price": "12.50"])
+    func testMenuItemInitSucceeds() {
+        let smallPepperoniItem = MenuItem(id: "1", data: ["name": "Small Pepperoni", "price": "12.50"])
         XCTAssertNotNil(smallPepperoniItem)
         
-        // Expensive item
-        let largeSupremeItem = MenuItem(id: "1234", data: ["name": "Large Supreme", "price": "27.00"])
+        let largeSupremeItem = MenuItem(id: "1", data: ["name": "Large Supreme", "price": "27.00"])
         XCTAssertNotNil(largeSupremeItem)
     }
     
-    // MARK: ShoppingCart Class Tests
+    func testMenuItemInitFails() {
+        let missingNameItem = MenuItem(id: "1", data: ["price": "12.50"])
+        XCTAssertNil(missingNameItem)
+        
+        let missingPriceItem = MenuItem(id: "1", data: ["name": "Small Pepperoni"])
+        XCTAssertNil(missingPriceItem)
+    }
     
     func testShoppingCartAddItem() {
-        let smallPepperoniItem = MenuItem(id: "1234", data: ["name": "Small Pepperoni", "price": "12.50"])
-        let largeSupremeItem = MenuItem(id: "1234", data: ["name": "Large Supreme", "price": "27.00"])
+        let smallPepperoniItem = MenuItem(id: "1", data: ["name": "Small Pepperoni", "price": "12.50"])
+        let largeSupremeItem = MenuItem(id: "1", data: ["name": "Large Supreme", "price": "27.00"])
         let cart = ShoppingCart()
         XCTAssertEqual(0, cart.items.count)
         cart.addItem(item: smallPepperoniItem!)
@@ -45,19 +39,12 @@ class PizzaHubTests: XCTestCase {
     }
     
     func testShoppingCartReturnTotal() {
-        let smallPepperoniItem = MenuItem(id: "1234", data: ["name": "Small Pepperoni", "price": "12.50"])
-        let largeSupremeItem = MenuItem(id: "1234", data: ["name": "Large Supreme", "price": "27.00"])
+        let smallPepperoniItem = MenuItem(id: "1", data: ["name": "Small Pepperoni", "price": "12.50"])
+        let largeSupremeItem = MenuItem(id: "1", data: ["name": "Large Supreme", "price": "27.00"])
         let cart = ShoppingCart()
         cart.addItem(item: smallPepperoniItem!)
         cart.addItem(item: largeSupremeItem!)
         XCTAssertEqual(39.50, cart.returnTotal())
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
     }
 
 }
