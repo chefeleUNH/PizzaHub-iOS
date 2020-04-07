@@ -27,6 +27,7 @@ struct PizzeriaDetailView: View {
                 Text(pizzeria.state)
                 Spacer()
             }
+            CircleImage(image: Image("pizzeria\(pizzeria.photo)"))
             NavigationLink(destination: EditPizzeriaView(pizzeria: pizzeria)) {
                 Text("Edit")
             }
@@ -54,7 +55,8 @@ struct PizzeriaDetailView_Previews: PreviewProvider {
         PizzeriaDetailView(pizzeria:
             Pizzeria(id: "1", data: ["name": "Vittoria's",
                                      "city": "Westerly",
-                                     "state": "RI"])!
+                                     "state": "RI",
+                                     "photo": "2"])!
         )
     }
 }

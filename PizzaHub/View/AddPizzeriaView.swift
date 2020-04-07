@@ -43,7 +43,8 @@ struct AddPizzeriaView: View {
     
     func addPizzeria() {
         if !name.isEmpty && !city.isEmpty && !state.isEmpty {
-            let data = ["name": name, "city": city, "state": state]
+            let photo = String(Int.random(in: 1 ..< 9)) // random number b/w 0 & 8
+            let data = ["name": name, "city": city, "state": state, "photo": photo]
             pizzeriasCollectionRef.addDocument(data: data)
             dismiss()
         }

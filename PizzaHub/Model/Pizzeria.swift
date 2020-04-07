@@ -13,19 +13,22 @@ class Pizzeria : FirebaseCodable {
     @Published var name: String
     @Published var city: String
     @Published var state: String
+    @Published var photo: String
     
     var data: [String: Any] {
         return [
             "name": name,
             "city": city,
-            "state": state
+            "state": state,
+            "photo": photo
         ]
     }
     
     required init?(id: String, data: [String : Any]) {
         guard let name = data["name"] as? String,
             let city = data["city"] as? String,
-            let state = data["state"] as? String
+            let state = data["state"] as? String,
+            let photo = data["photo"] as? String
             else {
                 return nil
         }
@@ -34,5 +37,6 @@ class Pizzeria : FirebaseCodable {
         self.name = name
         self.city = city
         self.state = state
+        self.photo = photo
     }
 }

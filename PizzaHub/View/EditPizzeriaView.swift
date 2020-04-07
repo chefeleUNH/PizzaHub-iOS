@@ -55,7 +55,8 @@ struct EditPizzeriaView_Previews: PreviewProvider {
         EditPizzeriaView(pizzeria:
             Pizzeria(id: "1", data: ["name": "Vittoria's",
                                      "city": "Westerly",
-                                     "state": "RI"])!
+                                     "state": "RI",
+                                     "photo": "2"])!
         )
     }
 }
