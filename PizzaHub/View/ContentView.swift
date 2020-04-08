@@ -23,7 +23,7 @@ struct ContentView: View {
                 List {
                     ForEach(pizzerias.items) { pizzeria in
                         NavigationLink(destination: PizzeriaDetailView(pizzeria: pizzeria)) {
-                            Text(pizzeria.name)
+                            PizzeriaRow(pizzeria: pizzeria)
                         }
                     }.onDelete(perform: deletePizzeria)
                 }
