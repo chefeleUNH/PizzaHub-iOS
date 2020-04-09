@@ -36,11 +36,7 @@ struct PizzeriaDetailView: View {
                 .font(.largeTitle)
             List {
                 ForEach(menu.items) { menuItem in
-                    HStack {
-                        Text(menuItem.name)
-                        Spacer()
-                        Text(menuItem.price)
-                    }
+                    MenuItemRow(menuItem: menuItem)
                 }
             }
             Spacer()

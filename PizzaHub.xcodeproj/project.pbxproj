@@ -12,6 +12,7 @@
 		1F3C147D23F50FDD007BE17A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F3C147C23F50FDD007BE17A /* GoogleService-Info.plist */; };
 		1F3C147E23F50FDD007BE17A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F3C147C23F50FDD007BE17A /* GoogleService-Info.plist */; };
 		1F3C147F23F50FDD007BE17A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F3C147C23F50FDD007BE17A /* GoogleService-Info.plist */; };
+		1F44C77E243D7A9A0073D59F /* MenuItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F44C77D243D7A9A0073D59F /* MenuItemRow.swift */; };
 		1F6FB644243118B80003FC2A /* EditPizzeriaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6FB643243118B80003FC2A /* EditPizzeriaView.swift */; };
 		1F6FB6462431A5EC0003FC2A /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6FB6452431A5EC0003FC2A /* CircleImage.swift */; };
 		1F8B02D3243D731300E78024 /* PizzeriaRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8B02D2243D731300E78024 /* PizzeriaRow.swift */; };
@@ -61,6 +62,7 @@
 		1F2B255D240F671C00FFBD29 /* Pizzeria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pizzeria.swift; sourceTree = "<group>"; };
 		1F2B2563240F7D0500FFBD29 /* DebugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugView.swift; sourceTree = "<group>"; };
 		1F3C147C23F50FDD007BE17A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1F44C77D243D7A9A0073D59F /* MenuItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemRow.swift; sourceTree = "<group>"; };
 		1F6FB643243118B80003FC2A /* EditPizzeriaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPizzeriaView.swift; sourceTree = "<group>"; };
 		1F6FB6452431A5EC0003FC2A /* CircleImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		1F8B02D2243D731300E78024 /* PizzeriaRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzeriaRow.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				1F6FB643243118B80003FC2A /* EditPizzeriaView.swift */,
 				1F6FB6452431A5EC0003FC2A /* CircleImage.swift */,
 				1F8B02D2243D731300E78024 /* PizzeriaRow.swift */,
+				1F44C77D243D7A9A0073D59F /* MenuItemRow.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -483,6 +486,7 @@
 				1F8B02D3243D731300E78024 /* PizzeriaRow.swift in Sources */,
 				1FE3AF6423F274070050662E /* SceneDelegate.swift in Sources */,
 				1FE3AF6623F274070050662E /* ContentView.swift in Sources */,
+				1F44C77E243D7A9A0073D59F /* MenuItemRow.swift in Sources */,
 				1FD3D675241CA21C005CF9AB /* AddPizzeriaView.swift in Sources */,
 				1F2B255E240F671C00FFBD29 /* Pizzeria.swift in Sources */,
 				1FD3D678241D8433005CF9AB /* PizzeriaDetailView.swift in Sources */,
