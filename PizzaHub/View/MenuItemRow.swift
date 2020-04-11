@@ -44,7 +44,6 @@ struct MenuItemRow: View {
 
 struct MenuItemRow_Previews: PreviewProvider {
     static var previews: some View {
-        MenuItemRow(menuItem:
-            MenuItem(id: "1", data: ["name": "Large Pizza", "price": "17.99"])!)
+        MenuItemRow(menuItem: MenuItem.example)
     }
 }

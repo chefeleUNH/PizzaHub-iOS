@@ -52,11 +52,6 @@ struct EditPizzeriaView: View {
 
 struct EditPizzeriaView_Previews: PreviewProvider {
     static var previews: some View {
-        EditPizzeriaView(pizzeria:
-            Pizzeria(id: "1", data: ["name": "Vittoria's",
-                                     "city": "Westerly",
-                                     "state": "RI",
-                                     "photo": "2"])!
-        )
+        EditPizzeriaView(pizzeria: Pizzeria.example)
     }
 }

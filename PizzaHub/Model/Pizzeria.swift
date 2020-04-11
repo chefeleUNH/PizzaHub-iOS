@@ -39,4 +39,11 @@ class Pizzeria : FirebaseCodable {
         self.state = state
         self.photo = photo
     }
+    
+    #if DEBUG
+    static let example = Pizzeria(id: "1", data: ["name": "Vittoria's",
+                                                  "city": "Westerly",
+                                                  "state": "RI",
+                                                  "photo": "2"])!
+    #endif
 }

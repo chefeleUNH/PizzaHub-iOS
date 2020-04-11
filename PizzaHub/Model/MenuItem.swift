@@ -31,4 +31,9 @@ class MenuItem: FirebaseCodable {
         self.name = name
         self.price = price
     }
+    
+    #if DEBUG
+    static let example = MenuItem(id: "1", data: ["name": "Large Pizza",
+                                                  "price": "17.99"])!
+    #endif
 }
