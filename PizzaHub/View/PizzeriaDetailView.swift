@@ -21,22 +21,22 @@ struct PizzeriaDetailView: View {
     }
     
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
             HStack {
                 Text(pizzeria.city)
                 Text(pizzeria.state)
                 Spacer()
+                NavigationLink(destination: EditPizzeriaView(pizzeria: pizzeria)) {
+                    Text("Edit")
+                }
             }
             CircleImage(image: Image("pizzeria\(pizzeria.photo)"))
-            NavigationLink(destination: EditPizzeriaView(pizzeria: pizzeria)) {
-                Text("Edit")
-            }
-            Divider()
             Text("Menu")
                 .font(.largeTitle)
             List {
                 ForEach(menu.items) { menuItem in
-                    MenuItemRow(menuItem: menuItem)
+                    NavigationLink(destination: MenuItemDetailView(menuItem: menuItem)) {                        MenuItemRow(menuItem: menuItem)
+                    }
                 }
             }
             Spacer()

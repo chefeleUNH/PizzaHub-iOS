@@ -16,6 +16,8 @@ struct PizzeriaRow: View {
             Image("pizzeria\(pizzeria.photo)")
                 .resizable()
                 .frame(width: 50, height: 50)
+                .clipShape(Circle())
+                .overlay(Circle().stroke(Color.gray, lineWidth: 2))
             Text(pizzeria.name)
         }
     }
@@ -23,10 +25,6 @@ struct PizzeriaRow: View {
 
 struct PizzeriaRow_Previews: PreviewProvider {
     static var previews: some View {
-        PizzeriaRow(pizzeria:
-            Pizzeria(id: "1", data: ["name": "Vittoria's",
-                                     "city": "Westerly",
-                                     "state": "RI",
-                                     "photo": "2"])!)
+        PizzeriaRow(pizzeria: Pizzeria.example)
     }
 }

@@ -12,39 +12,39 @@ import XCTest
 class PizzaHubTests: XCTestCase {
 
     func testMenuItemInitSucceeds() {
-        let smallPepperoniItem = MenuItem(id: "1", data: ["name": "Small Pepperoni", "price": "12.50"])
+        let smallPepperoniItem = MenuItem(id: "1", data: ["name": "Small Pepperoni", "price": "12.50", "photo": "1"])
         XCTAssertNotNil(smallPepperoniItem)
         
-        let largeSupremeItem = MenuItem(id: "1", data: ["name": "Large Supreme", "price": "27.00"])
+        let largeSupremeItem = MenuItem(id: "1", data: ["name": "Large Supreme", "price": "27.00", "photo": "1"])
         XCTAssertNotNil(largeSupremeItem)
     }
     
     func testMenuItemInitFails() {
-        let missingNameItem = MenuItem(id: "1", data: ["price": "12.50"])
+        let missingNameItem = MenuItem(id: "1", data: ["price": "12.50", "photo": "1"])
         XCTAssertNil(missingNameItem)
         
-        let missingPriceItem = MenuItem(id: "1", data: ["name": "Small Pepperoni"])
+        let missingPriceItem = MenuItem(id: "1", data: ["name": "Small Pepperoni", "photo": "1"])
         XCTAssertNil(missingPriceItem)
     }
     
     func testShoppingCartAddItem() {
-        let smallPepperoniItem = MenuItem(id: "1", data: ["name": "Small Pepperoni", "price": "12.50"])
-        let largeSupremeItem = MenuItem(id: "1", data: ["name": "Large Supreme", "price": "27.00"])
+        let smallPepperoniItem = MenuItem(id: "1", data: ["name": "Small Pepperoni", "price": "12.50", "photo": "1"])
+        let largeSupremeItem = MenuItem(id: "1", data: ["name": "Large Supreme", "price": "27.00", "photo": "1"])
         let cart = ShoppingCart()
         XCTAssertEqual(0, cart.items.count)
-        cart.addItem(item: smallPepperoniItem!)
+        cart.add(item: smallPepperoniItem!)
         XCTAssertEqual(1, cart.items.count)
-        cart.addItem(item: largeSupremeItem!)
+        cart.add(item: largeSupremeItem!)
         XCTAssertEqual(2, cart.items.count)
     }
     
-    func testShoppingCartReturnTotal() {
-        let smallPepperoniItem = MenuItem(id: "1", data: ["name": "Small Pepperoni", "price": "12.50"])
-        let largeSupremeItem = MenuItem(id: "1", data: ["name": "Large Supreme", "price": "27.00"])
+    func testShoppingCartTotal() {
+        let smallPepperoniItem = MenuItem(id: "1", data: ["name": "Small Pepperoni", "price": "12.50", "photo": "1"])
+        let largeSupremeItem = MenuItem(id: "1", data: ["name": "Large Supreme", "price": "27.00", "photo": "1"])
         let cart = ShoppingCart()
-        cart.addItem(item: smallPepperoniItem!)
-        cart.addItem(item: largeSupremeItem!)
-        XCTAssertEqual(39.50, cart.returnTotal())
+        cart.add(item: smallPepperoniItem!)
+        cart.add(item: largeSupremeItem!)
+        XCTAssertEqual(39.50, cart.total)
     }
 
 }

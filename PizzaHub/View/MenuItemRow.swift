@@ -9,36 +9,20 @@
 import SwiftUI
 
 struct MenuItemRow: View {
+    @EnvironmentObject var cart: ShoppingCart
     @ObservedObject var menuItem: MenuItem
-    @State var quantity = 0
     
     var body: some View {
         HStack {
+            Image(menuItem.photo)
+                .resizable()
+                .frame(width: 50, height: 50)
+                .clipShape(Circle())
+                .overlay(Circle().stroke(Color.gray, lineWidth: 2))
             Text(menuItem.name)
-            Text(menuItem.price)
             Spacer()
-            Button(action: {
-                self.decrementQty()
-            }) {
-                Text("-")
-            }.buttonStyle(BorderlessButtonStyle())
-            Text(String(quantity))
-            Button(action: {
-                self.incrementQty()
-            }) {
-                Text("+")
-            }.buttonStyle(BorderlessButtonStyle())
+            Text("$\(menuItem.price)")
         }
-    }
-    
-    func decrementQty() {
-        if quantity > 0 {
-            self.quantity -= 1
-        }
-    }
-    
-    func incrementQty() {
-        self.quantity += 1
     }
 }
 
