@@ -134,16 +134,16 @@
 			children = (
 				1FE3AF6523F274070050662E /* ContentView.swift */,
 				1F2B2563240F7D0500FFBD29 /* DebugView.swift */,
-				1FD3D674241CA21C005CF9AB /* AddPizzeriaView.swift */,
 				1FD3D677241D8433005CF9AB /* PizzeriaDetailView.swift */,
+				1FD3D674241CA21C005CF9AB /* AddPizzeriaView.swift */,
 				1F6FB643243118B80003FC2A /* EditPizzeriaView.swift */,
 				1F6FB6452431A5EC0003FC2A /* CircleImage.swift */,
 				1F8B02D2243D731300E78024 /* PizzeriaRow.swift */,
 				1F44C77D243D7A9A0073D59F /* MenuItemRow.swift */,
+				1F846BE424469BE4009FAEDD /* MenuItemDetailView.swift */,
+				1F7D5816244587FF00BEA339 /* AppTabView.swift */,
 				1F44C7C72442995E0073D59F /* OrderView.swift */,
 				1F7D58142445851A00BEA339 /* CheckoutView.swift */,
-				1F7D5816244587FF00BEA339 /* AppTabView.swift */,
-				1F846BE424469BE4009FAEDD /* MenuItemDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";

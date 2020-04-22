@@ -10,7 +10,7 @@ import XCTest
 @testable import PizzaHub
 
 class PizzaHubTests: XCTestCase {
-
+    
     func testMenuItemInitSucceeds() {
         let smallPepperoniItem = MenuItem(id: "1", data: ["name": "Small Pepperoni", "price": "12.50", "photo": "1"])
         XCTAssertNotNil(smallPepperoniItem)
@@ -28,23 +28,65 @@ class PizzaHubTests: XCTestCase {
     }
     
     func testShoppingCartAddItem() {
-        let smallPepperoniItem = MenuItem(id: "1", data: ["name": "Small Pepperoni", "price": "12.50", "photo": "1"])
-        let largeSupremeItem = MenuItem(id: "1", data: ["name": "Large Supreme", "price": "27.00", "photo": "1"])
         let cart = ShoppingCart()
         XCTAssertEqual(0, cart.items.count)
-        cart.add(item: smallPepperoniItem!)
+        
+        try! cart.add(item: MenuItem.example, pizzeria: Pizzeria.example)
         XCTAssertEqual(1, cart.items.count)
-        cart.add(item: largeSupremeItem!)
+        
+        try! cart.add(item: MenuItem.example, pizzeria: Pizzeria.example)
         XCTAssertEqual(2, cart.items.count)
     }
     
-    func testShoppingCartTotal() {
+    func testShoppingCartReturnTotal() {
         let smallPepperoniItem = MenuItem(id: "1", data: ["name": "Small Pepperoni", "price": "12.50", "photo": "1"])
         let largeSupremeItem = MenuItem(id: "1", data: ["name": "Large Supreme", "price": "27.00", "photo": "1"])
         let cart = ShoppingCart()
-        cart.add(item: smallPepperoniItem!)
-        cart.add(item: largeSupremeItem!)
+        
+        try! cart.add(item: smallPepperoniItem!, pizzeria: Pizzeria.example)
+        try! cart.add(item: largeSupremeItem!, pizzeria: Pizzeria.example)
+        
         XCTAssertEqual(39.50, cart.total)
     }
-
+    
+    func testShoppingCartAddIncompatibleMenuItem() {
+        let pizzeria1 = Pizzeria.example
+        let pizzeria2 = Pizzeria(id: "2", data: ["name": "Vittoria's",
+                                                 "city": "Westerly",
+                                                 "state": "RI",
+                                                 "photo": "2"])
+        let cart = ShoppingCart()
+        
+        // add the first item, which should init the shopping cart with pizzeria1
+        try! cart.add(item: MenuItem.example, pizzeria: pizzeria1)
+        
+        // now try to add a menu item from pizzeria2, which should throw an error
+        XCTAssertThrowsError(try cart.add(item: MenuItem.example, pizzeria: pizzeria2!))
+    }
+    
+    func testShoppingCartReset() {
+        let cart = ShoppingCart()
+        
+        // it's a new shopping cart so the pizzeria should be nil...
+        XCTAssertNil(cart.pizzeria)
+        
+        // ...and the list of items should also be zero-length
+        XCTAssertEqual(0, cart.items.count)
+        
+        // add the first item, which should make the pizzeria non-nil and increase the length to one
+        try! cart.add(item: MenuItem.example, pizzeria: Pizzeria.example)
+        XCTAssertNotNil(cart.pizzeria)
+        XCTAssertEqual(1, cart.items.count)
+        
+        // now reset the cart
+        cart.reset()
+        
+        // the pizzeria should once again be nil...
+        XCTAssertNil(cart.pizzeria)
+        
+        // ...and the list of items should be zero-length once again
+        XCTAssertEqual(0, cart.items.count)
+    }
+    
+    
 }

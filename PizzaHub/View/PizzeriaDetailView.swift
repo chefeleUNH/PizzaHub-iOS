@@ -35,7 +35,7 @@ struct PizzeriaDetailView: View {
                 .font(.largeTitle)
             List {
                 ForEach(menu.items) { menuItem in
-                    NavigationLink(destination: MenuItemDetailView(menuItem: menuItem)) {                        MenuItemRow(menuItem: menuItem)
+                    NavigationLink(destination: MenuItemDetailView(menuItem: menuItem, pizzeria: self.pizzeria)) {                        MenuItemRow(menuItem: menuItem)
                     }
                 }
             }

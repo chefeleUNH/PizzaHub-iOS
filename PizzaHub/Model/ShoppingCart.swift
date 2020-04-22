@@ -8,7 +8,12 @@
 
 import UIKit
 
+enum ShoppingCartError: Error {
+    case menuItemDoesNotMatchPizzeria
+}
+
 class ShoppingCart: ObservableObject {
+    @Published var pizzeria: Pizzeria?  // a shopping cart can only contain one pizzeria at a time, and won't contain one until the user adds an item to the cart
     @Published var items = [MenuItem]()
     
     var total: Double {
@@ -19,7 +24,18 @@ class ShoppingCart: ObservableObject {
         }
     }
     
-    func add(item: MenuItem) {
+    func add(item: MenuItem, pizzeria: Pizzeria) throws {
+        // if the pizzeria hasn't been set yet, set it here
+        if self.pizzeria == nil {
+            self.pizzeria = pizzeria
+        }
+        
+        // if the pizzerias don't match, throw an error
+        if self.pizzeria != pizzeria {
+            throw ShoppingCartError.menuItemDoesNotMatchPizzeria
+        }
+        
+        // the pizzerias match, so add the item
         items.append(item)
     }
     
@@ -27,5 +43,10 @@ class ShoppingCart: ObservableObject {
         if let index = items.firstIndex(of: item) {
             items.remove(at: index)
         }
+    }
+    
+    func reset() {
+        pizzeria = nil
+        items = [MenuItem]()
     }
 }

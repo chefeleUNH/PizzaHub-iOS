@@ -8,7 +8,11 @@
 
 import FirebaseFirestore
 
-class Pizzeria : FirebaseCodable {
+class Pizzeria : FirebaseCodable, Equatable {
+    static func == (lhs: Pizzeria, rhs: Pizzeria) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
     var id: String
     @Published var name: String
     @Published var city: String
