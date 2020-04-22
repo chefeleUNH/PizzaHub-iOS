@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import FirebaseFirestore
 
 struct CheckoutView: View {
     @EnvironmentObject var cart: ShoppingCart
@@ -30,7 +31,15 @@ struct CheckoutView: View {
     
     func confirmOrder() {
         self.showingPaymentAlert.toggle()
-        print("Uploading to firebase")
+        guard let pizzeria = self.cart.pizzeria else {  // null check the pizzeria
+            return
+        }
+        let ordersCollectionRef = pizzeriasCollectionRef.document(pizzeria.id).collection("orders")
+        let data = ["timestamp": Timestamp(),
+                    "items": self.cart.items.map({ $0.id }),
+                    "price": String(format: "%.2f", cart.total)]
+            as [String : Any]
+        ordersCollectionRef.addDocument(data: data)
     }
 }
 
