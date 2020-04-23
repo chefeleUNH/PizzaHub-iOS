@@ -1,5 +1,5 @@
 //
-//  OrderView.swift
+//  CartView.swift
 //  PizzaHub
 //
 //  Created by Charles Hefele on 4/11/20.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct OrderView: View {
+struct CartView: View {
     @EnvironmentObject var cart: ShoppingCart
     
     var body: some View {
@@ -30,7 +30,7 @@ struct OrderView: View {
                     }
                 }.disabled(cart.items.isEmpty)
             }
-            .navigationBarTitle("Order")
+            .navigationBarTitle("Shopping Cart")
             .listStyle(GroupedListStyle())
             .navigationBarItems(trailing: EditButton())
         }
@@ -41,10 +41,10 @@ struct OrderView: View {
     }
 }
 
-struct OrderView_Previews: PreviewProvider {
+struct CartView_Previews: PreviewProvider {
     static let cart = ShoppingCart()
     
     static var previews: some View {
-        OrderView().environmentObject(cart)
+        CartView().environmentObject(cart)
     }
 }
