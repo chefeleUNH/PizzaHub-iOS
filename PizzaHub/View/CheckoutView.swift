@@ -37,9 +37,9 @@ struct CheckoutView: View {
         guard let pizzeria = self.cart.pizzeria else {  // null check the pizzeria
             return
         }
-        let ordersCollectionRef = pizzeriasCollectionRef.document(pizzeria.id).collection("orders")
         let data = ["timestamp": Timestamp(),
-                    "items": self.cart.items.map({ $0.id }),
+                    "pizzeria": pizzeria.name,
+                    "items": self.cart.items.map({ $0.name }),
                     "price": String(format: "%.2f", cart.total)]
             as [String : Any]
         ordersCollectionRef.addDocument(data: data) // post to firebase
