@@ -30,7 +30,10 @@ struct CheckoutView: View {
     }
     
     func confirmOrder() {
+        // toogle the payment alert
         self.showingPaymentAlert.toggle()
+        
+        // upload the order to firebase
         guard let pizzeria = self.cart.pizzeria else {  // null check the pizzeria
             return
         }
@@ -39,7 +42,22 @@ struct CheckoutView: View {
                     "items": self.cart.items.map({ $0.id }),
                     "price": String(format: "%.2f", cart.total)]
             as [String : Any]
-        ordersCollectionRef.addDocument(data: data)
+        ordersCollectionRef.addDocument(data: data) // post to firebase
+        
+        // show pizza ready notification to user
+        let content = UNMutableNotificationContent()
+        content.title = "Pizza order ready!"
+        content.subtitle = "Your order from \(pizzeria.name) is ready for pickup."
+        content.sound = UNNotificationSound.default
+
+        // show this notification five seconds from now
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+
+        // choose a random identifier
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+
+        // add our notification request
+        UNUserNotificationCenter.current().add(request)
     }
 }
 

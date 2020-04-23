@@ -19,6 +19,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 
+        // request notifications from user
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
+            if success {
+                print("Notifications enabled by user")
+            } else if let error = error {
+                print(error.localizedDescription)
+            }
+        }
+        
         // Create the SwiftUI view that provides the window contents.
         let appTabView = AppTabView().environmentObject(cart)
 
