@@ -21,6 +21,10 @@
 		1F846BE524469BE4009FAEDD /* MenuItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F846BE424469BE4009FAEDD /* MenuItemDetailView.swift */; };
 		1F8B02D3243D731300E78024 /* PizzeriaRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8B02D2243D731300E78024 /* PizzeriaRow.swift */; };
 		1FAC8EA4242B09D600416DA7 /* FirebaseCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAC8EA3242B09D600416DA7 /* FirebaseCollection.swift */; };
+		1FBDD68D24515E9100DF838C /* OrdersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBDD68C24515E9100DF838C /* OrdersView.swift */; };
+		1FBDD68F24515EEC00DF838C /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBDD68E24515EEC00DF838C /* Order.swift */; };
+		1FBDD691245245BD00DF838C /* OrderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBDD690245245BD00DF838C /* OrderDetailView.swift */; };
+		1FBDD6932452531200DF838C /* OrderRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBDD6922452531200DF838C /* OrderRow.swift */; };
 		1FD3D675241CA21C005CF9AB /* AddPizzeriaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD3D674241CA21C005CF9AB /* AddPizzeriaView.swift */; };
 		1FD3D676241CAAAB005CF9AB /* Pizzeria.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2B255D240F671C00FFBD29 /* Pizzeria.swift */; };
 		1FD3D678241D8433005CF9AB /* PizzeriaDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD3D677241D8433005CF9AB /* PizzeriaDetailView.swift */; };
@@ -75,6 +79,10 @@
 		1F846BE424469BE4009FAEDD /* MenuItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemDetailView.swift; sourceTree = "<group>"; };
 		1F8B02D2243D731300E78024 /* PizzeriaRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzeriaRow.swift; sourceTree = "<group>"; };
 		1FAC8EA3242B09D600416DA7 /* FirebaseCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseCollection.swift; sourceTree = "<group>"; };
+		1FBDD68C24515E9100DF838C /* OrdersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersView.swift; sourceTree = "<group>"; };
+		1FBDD68E24515EEC00DF838C /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		1FBDD690245245BD00DF838C /* OrderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailView.swift; sourceTree = "<group>"; };
+		1FBDD6922452531200DF838C /* OrderRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRow.swift; sourceTree = "<group>"; };
 		1FD3D674241CA21C005CF9AB /* AddPizzeriaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPizzeriaView.swift; sourceTree = "<group>"; };
 		1FD3D677241D8433005CF9AB /* PizzeriaDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzeriaDetailView.swift; sourceTree = "<group>"; };
 		1FE3AF5E23F274070050662E /* PizzaHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PizzaHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,6 +152,9 @@
 				1F7D5816244587FF00BEA339 /* AppTabView.swift */,
 				1F44C7C72442995E0073D59F /* CartView.swift */,
 				1F7D58142445851A00BEA339 /* CheckoutView.swift */,
+				1FBDD68C24515E9100DF838C /* OrdersView.swift */,
+				1FBDD690245245BD00DF838C /* OrderDetailView.swift */,
+				1FBDD6922452531200DF838C /* OrderRow.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -219,6 +230,7 @@
 				1FE3AF9423F2781E0050662E /* ShoppingCart.swift */,
 				1FE3AF9923F278740050662E /* MenuItem.swift */,
 				1F2B255D240F671C00FFBD29 /* Pizzeria.swift */,
+				1FBDD68E24515EEC00DF838C /* Order.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -490,18 +502,22 @@
 			files = (
 				1FE3AF9523F2781E0050662E /* ShoppingCart.swift in Sources */,
 				1F44C7C82442995E0073D59F /* CartView.swift in Sources */,
+				1FBDD68F24515EEC00DF838C /* Order.swift in Sources */,
 				1FE3AF6223F274070050662E /* AppDelegate.swift in Sources */,
 				1F2B2564240F7D0500FFBD29 /* DebugView.swift in Sources */,
+				1FBDD691245245BD00DF838C /* OrderDetailView.swift in Sources */,
 				1F7D58152445851A00BEA339 /* CheckoutView.swift in Sources */,
 				1FE3AF9A23F278740050662E /* MenuItem.swift in Sources */,
 				1F6FB644243118B80003FC2A /* EditPizzeriaView.swift in Sources */,
 				1F6FB6462431A5EC0003FC2A /* CircleImage.swift in Sources */,
 				1FAC8EA4242B09D600416DA7 /* FirebaseCollection.swift in Sources */,
+				1FBDD6932452531200DF838C /* OrderRow.swift in Sources */,
 				1F8B02D3243D731300E78024 /* PizzeriaRow.swift in Sources */,
 				1F7D5817244587FF00BEA339 /* AppTabView.swift in Sources */,
 				1F846BE524469BE4009FAEDD /* MenuItemDetailView.swift in Sources */,
 				1FE3AF6423F274070050662E /* SceneDelegate.swift in Sources */,
 				1FE3AF6623F274070050662E /* ContentView.swift in Sources */,
+				1FBDD68D24515E9100DF838C /* OrdersView.swift in Sources */,
 				1F44C77E243D7A9A0073D59F /* MenuItemRow.swift in Sources */,
 				1FD3D675241CA21C005CF9AB /* AddPizzeriaView.swift in Sources */,
 				1F2B255E240F671C00FFBD29 /* Pizzeria.swift in Sources */,
