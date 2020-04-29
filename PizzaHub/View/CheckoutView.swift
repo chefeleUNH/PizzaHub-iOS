@@ -15,11 +15,18 @@ struct CheckoutView: View {
     
     var body: some View {
         VStack {
-            Text("TOTAL: $\(cart.total, specifier: "%.2f")")
-                .font(.largeTitle)
+            if cart.total == 0.00 {
+                Text("The shopping cart is empty")
+                    .font(.largeTitle)
+            } else {
+                Text("TOTAL: $\(cart.total, specifier: "%.2f")")
+                    .font(.largeTitle)
+            }
             Button("Confirm order") {
                 self.confirmOrder()
-            }.padding()
+            }
+            .padding()
+            .disabled(cart.total == 0.00)
         }
         .navigationBarTitle(Text("Payment"), displayMode: .inline)
         .alert(isPresented: $showingPaymentAlert) {
