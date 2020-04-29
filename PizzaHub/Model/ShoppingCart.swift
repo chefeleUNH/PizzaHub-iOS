@@ -25,7 +25,7 @@ class ShoppingCart: ObservableObject {
     }
     
     func add(item: MenuItem, pizzeria: Pizzeria) throws {
-        // if the pizzeria hasn't been set yet, set it here
+        // if the pizzeria hasn't been set yet, set it now
         if self.pizzeria == nil {
             self.pizzeria = pizzeria
         }

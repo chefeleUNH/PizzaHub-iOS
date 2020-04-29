@@ -30,7 +30,7 @@ struct CheckoutView: View {
     }
     
     func confirmOrder() {
-        // toogle the payment alert
+        // toggle the payment alert
         self.showingPaymentAlert.toggle()
         
         // upload the order to firebase
@@ -44,18 +44,18 @@ struct CheckoutView: View {
             as [String : Any]
         ordersCollectionRef.addDocument(data: data) // post to firebase
         
-        // show pizza ready notification to user
+        // show pizza ready notification to the user
         let content = UNMutableNotificationContent()
         content.title = "Pizza order ready!"
         content.subtitle = "Your order from \(pizzeria.name) is ready for pickup."
         content.sound = UNNotificationSound.default
-
+        
         // show this notification five seconds from now
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
-
+        
         // choose a random identifier
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
-
+        
         // add our notification request
         UNUserNotificationCenter.current().add(request)
     }

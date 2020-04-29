@@ -1,8 +1,9 @@
 //
-//  AppView.swift
-//
+//  AppTabView.swift
+//  PizzaHub
 //
 //  Created by Charles Hefele on 4/11/20.
+//  Copyright © 2020 Charles Hefele. All rights reserved.
 //
 
 import SwiftUI
@@ -33,7 +34,7 @@ struct AppTabView: View {
 
 struct AppTabView_Previews: PreviewProvider {
     static let cart = ShoppingCart()
-
+    
     static var previews: some View {
         AppTabView().environmentObject(cart)
     }

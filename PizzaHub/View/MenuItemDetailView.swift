@@ -37,7 +37,7 @@ struct MenuItemDetailView: View {
         do {
             try self.cart.add(item: self.menuItem, pizzeria: self.pizzeria)
         } catch ShoppingCartError.menuItemDoesNotMatchPizzeria {
-            print("menu item doesn't match pizzeria!")
+            print("menu item doesn't match pizzeria")
             showingCartAlert.toggle()
         } catch {
             print("failed for another reason")

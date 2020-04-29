@@ -11,7 +11,7 @@ import FirebaseFirestore
 
 struct PizzeriaDetailView: View {
     @ObservedObject var pizzeria: Pizzeria
-    @ObservedObject private var menu: FirebaseCollection<MenuItem>
+    @ObservedObject var menu: FirebaseCollection<MenuItem>
     private var menuCollectionRef: CollectionReference
     
     init(pizzeria: Pizzeria) {
@@ -35,7 +35,8 @@ struct PizzeriaDetailView: View {
                 .font(.largeTitle)
             List {
                 ForEach(menu.items) { menuItem in
-                    NavigationLink(destination: MenuItemDetailView(menuItem: menuItem, pizzeria: self.pizzeria)) {                        MenuItemRow(menuItem: menuItem)
+                    NavigationLink(destination: MenuItemDetailView(menuItem: menuItem, pizzeria: self.pizzeria)) {
+                        MenuItemRow(menuItem: menuItem)
                     }
                 }
             }

@@ -9,7 +9,6 @@
 import SwiftUI
 
 struct MenuItemRow: View {
-    @EnvironmentObject var cart: ShoppingCart
     @ObservedObject var menuItem: MenuItem
     
     var body: some View {

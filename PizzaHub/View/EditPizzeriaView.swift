@@ -40,7 +40,8 @@ struct EditPizzeriaView: View {
     }
     
     func updatePizzeria() {
-        if !pizzeria.name.isEmpty && !pizzeria.city.isEmpty && !pizzeria.state.isEmpty { pizzeriasCollectionRef.document(pizzeria.id).setData(pizzeria.data)
+        if !pizzeria.name.isEmpty && !pizzeria.city.isEmpty && !pizzeria.state.isEmpty {
+            pizzeriasCollectionRef.document(pizzeria.id).setData(pizzeria.data)
             dismiss()
         }
     }

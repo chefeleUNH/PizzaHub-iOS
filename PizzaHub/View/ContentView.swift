@@ -42,11 +42,10 @@ struct ContentView: View {
             if let error = error {
                 print("Error removing document: \(error)")
             } else {
-                print("Document successfully removed")
+                print("Document successfully removed!")
             }
         }
     }
-    
 }
 
 struct ContentView_Previews: PreviewProvider {

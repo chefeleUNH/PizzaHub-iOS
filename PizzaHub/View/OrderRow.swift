@@ -10,14 +10,23 @@ import SwiftUI
 
 struct OrderRow: View {
     @ObservedObject var order: Order
+    private let dateFormatter: DateFormatter
+    
+    init(order: Order) {
+        self.order = order
+        dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        dateFormatter.timeStyle = .short
+    }
     
     var body: some View {
         HStack {
-            Text(order.pizzeria)
+            VStack(alignment: .leading) {
+                Text(order.pizzeria).font(.headline)
+                Text(dateFormatter.string(from: order.timestamp.dateValue()))
+            }
             Spacer()
             Text("$\(order.total)")
-//            Spacer()
-//            Text(order.timestamp.description)
         }
     }
 }

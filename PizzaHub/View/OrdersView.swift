@@ -14,9 +14,11 @@ struct OrdersView: View {
     var body: some View {
         NavigationView {
             VStack {
-                ForEach(orders.items) { order in
-                    NavigationLink(destination: OrderDetailView(order: order)) {
-                        OrderRow(order: order)
+                List {
+                    ForEach(orders.items) { order in
+                        NavigationLink(destination: OrderDetailView(order: order)) {
+                            OrderRow(order: order)
+                        }
                     }
                 }
             }
