@@ -30,7 +30,7 @@
 		1FD3D678241D8433005CF9AB /* PizzeriaDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD3D677241D8433005CF9AB /* PizzeriaDetailView.swift */; };
 		1FE3AF6223F274070050662E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE3AF6123F274070050662E /* AppDelegate.swift */; };
 		1FE3AF6423F274070050662E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE3AF6323F274070050662E /* SceneDelegate.swift */; };
-		1FE3AF6623F274070050662E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE3AF6523F274070050662E /* ContentView.swift */; };
+		1FE3AF6623F274070050662E /* PizzeriaListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE3AF6523F274070050662E /* PizzeriaListView.swift */; };
 		1FE3AF6823F274090050662E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FE3AF6723F274090050662E /* Assets.xcassets */; };
 		1FE3AF6B23F274090050662E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FE3AF6A23F274090050662E /* Preview Assets.xcassets */; };
 		1FE3AF6E23F274090050662E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FE3AF6C23F274090050662E /* LaunchScreen.storyboard */; };
@@ -88,7 +88,7 @@
 		1FE3AF5E23F274070050662E /* PizzaHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PizzaHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FE3AF6123F274070050662E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FE3AF6323F274070050662E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1FE3AF6523F274070050662E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1FE3AF6523F274070050662E /* PizzeriaListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzeriaListView.swift; sourceTree = "<group>"; };
 		1FE3AF6723F274090050662E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1FE3AF6A23F274090050662E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1FE3AF6D23F274090050662E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -140,7 +140,7 @@
 		1F2B25652410AEA400FFBD29 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1FE3AF6523F274070050662E /* ContentView.swift */,
+				1FE3AF6523F274070050662E /* PizzeriaListView.swift */,
 				1F2B2563240F7D0500FFBD29 /* DebugView.swift */,
 				1FD3D677241D8433005CF9AB /* PizzeriaDetailView.swift */,
 				1FD3D674241CA21C005CF9AB /* AddPizzeriaView.swift */,
@@ -516,7 +516,7 @@
 				1F7D5817244587FF00BEA339 /* AppTabView.swift in Sources */,
 				1F846BE524469BE4009FAEDD /* MenuItemDetailView.swift in Sources */,
 				1FE3AF6423F274070050662E /* SceneDelegate.swift in Sources */,
-				1FE3AF6623F274070050662E /* ContentView.swift in Sources */,
+				1FE3AF6623F274070050662E /* PizzeriaListView.swift in Sources */,
 				1FBDD68D24515E9100DF838C /* OrdersView.swift in Sources */,
 				1F44C77E243D7A9A0073D59F /* MenuItemRow.swift in Sources */,
 				1FD3D675241CA21C005CF9AB /* AddPizzeriaView.swift in Sources */,

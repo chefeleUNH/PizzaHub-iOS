@@ -11,7 +11,7 @@ import SwiftUI
 struct AppTabView: View {
     var body: some View {
         TabView {
-            ContentView()
+            PizzeriaListView()
                 .tabItem {
                     Image(systemName: "list.dash").font(.title)
                     Text("Pizzerias")

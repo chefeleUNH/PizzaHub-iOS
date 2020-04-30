@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  PizzeriaListView.swift
 //  PizzaHub
 //
 //  Created by Charles Hefele on 2/11/20.
@@ -12,7 +12,7 @@ import FirebaseFirestore
 let pizzeriasCollectionRef = Firestore.firestore().collection("pizzerias")
 let ordersCollectionRef = Firestore.firestore().collection("orders")
 
-struct ContentView: View {
+struct PizzeriaListView: View {
     @ObservedObject private var pizzerias = FirebaseCollection<Pizzeria>(collectionRef: pizzeriasCollectionRef)
     
     var body: some View {
@@ -48,8 +48,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct PizzeriaListView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        PizzeriaListView()
     }
 }
