@@ -37,7 +37,7 @@ struct CartView: View {
     }
     
     func deleteItems(at offsets: IndexSet) {
-        cart.items.remove(atOffsets: offsets)
+        cart.remove(item: cart.items[offsets.first!])
     }
 }
 
