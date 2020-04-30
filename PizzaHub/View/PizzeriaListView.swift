@@ -10,7 +10,6 @@ import SwiftUI
 import FirebaseFirestore
 
 let pizzeriasCollectionRef = Firestore.firestore().collection("pizzerias")
-let ordersCollectionRef = Firestore.firestore().collection("orders")
 
 struct PizzeriaListView: View {
     @ObservedObject private var pizzerias = FirebaseCollection<Pizzeria>(collectionRef: pizzeriasCollectionRef)

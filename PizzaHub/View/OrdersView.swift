@@ -7,6 +7,9 @@
 //
 
 import SwiftUI
+import FirebaseFirestore
+
+let ordersCollectionRef = Firestore.firestore().collection("orders")
 
 struct OrdersView: View {
     @ObservedObject private var orders = FirebaseCollection<Order>(collectionRef: ordersCollectionRef)
