@@ -15,19 +15,33 @@ struct OrderDetailView: View {
     init(order: Order) {
         self.order = order
         dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .short
-        dateFormatter.timeStyle = .short
+        dateFormatter.dateStyle = .long
+        dateFormatter.timeStyle = .long
     }
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text(order.pizzeria)
-            Text("$\(order.total)")
-            Text(dateFormatter.string(from: order.timestamp.dateValue()))
+            CircleImage(image: Image("pizzeria\(order.photo)"))
+            Divider()
+            Text("Ordered from: \(order.pizzeria)")
+                .font(.headline)
+            Text("Ordered on: \(dateFormatter.string(from: order.timestamp.dateValue()))")
+                .font(.headline)
+            Text("Order total: $\(order.total)")
+                .font(.headline)
+            Divider()
+            Text("Items Ordered")
+                .font(.largeTitle)
+            List {
+                ForEach(order.items, id: \.self) { item in
+                    Text(item)
+                }
+            }
             Spacer()
-            //TODO: add a list of all of the items in the order
         }
+        .padding()
         .navigationBarTitle("Order Details")
+        .listStyle(GroupedListStyle())
     }
 }
 
