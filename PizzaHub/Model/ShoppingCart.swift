@@ -44,8 +44,8 @@ class ShoppingCart: ObservableObject {
             items.remove(at: index)
             
             // if this was the last item in the list, reset the pizzeria to null (so that a new order can begin)
-            if items.count == 0 {
-                pizzeria = nil
+            if items.isEmpty {
+                reset()
             }
         }
     }

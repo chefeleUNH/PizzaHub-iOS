@@ -15,7 +15,7 @@ struct CheckoutView: View {
     
     var body: some View {
         VStack {
-            if cart.total == 0.00 {
+            if cart.items.isEmpty {
                 Text("The shopping cart is empty")
                     .font(.largeTitle)
             } else {
@@ -26,7 +26,7 @@ struct CheckoutView: View {
                 self.confirmOrder()
             }
             .padding()
-            .disabled(cart.total == 0.00)
+            .disabled(cart.items.isEmpty)
         }
         .navigationBarTitle(Text("Payment"), displayMode: .inline)
         .alert(isPresented: $showingPaymentAlert) {
