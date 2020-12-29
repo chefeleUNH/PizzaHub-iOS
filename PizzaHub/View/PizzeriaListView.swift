@@ -25,24 +25,10 @@ struct PizzeriaListView: View {
                         NavigationLink(destination: PizzeriaDetailView(pizzeria: pizzeria)) {
                             PizzeriaRow(pizzeria: pizzeria)
                         }
-                    }.onDelete(perform: deletePizzeria)
+                    }
                 }
             }
             .navigationBarTitle("Pizzerias")
-            .navigationBarItems(leading: EditButton())
-        }
-    }
-    
-    func deletePizzeria(at offsets: IndexSet) {
-        let index = offsets.first!
-        print("Deleting pizzeria: \(pizzerias.items[index])")
-        let id = pizzerias.items[index].id
-        pizzeriasCollectionRef.document(id).delete() { error in
-            if let error = error {
-                print("Error removing document: \(error)")
-            } else {
-                print("Document successfully removed!")
-            }
         }
     }
 }
