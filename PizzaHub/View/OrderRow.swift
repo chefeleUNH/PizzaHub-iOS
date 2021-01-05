@@ -7,8 +7,11 @@
 //
 
 import SwiftUI
+import FirebaseStorage
+import SDWebImageSwiftUI
 
 struct OrderRow: View {
+    @State private var imageURL = URL(string: "")
     @ObservedObject var order: Order
     private let dateFormatter: DateFormatter
     
@@ -21,17 +24,27 @@ struct OrderRow: View {
     
     var body: some View {
         HStack {
-            Image("pizzeria\(order.photo)")
+            WebImage(url: imageURL)
                 .resizable()
-                .frame(width: 50, height: 50)
-                .clipShape(Circle())
-                .overlay(Circle().stroke(Color.gray, lineWidth: 2))
+                .frame(width: 63, height: 50)
+                .cornerRadius(13)
             VStack(alignment: .leading) {
                 Text(order.pizzeria).font(.headline)
                 Text(dateFormatter.string(from: order.timestamp.dateValue()))
             }
             Spacer()
             Text("$\(order.total)")
+        }.onAppear(perform: loadImageFromFirebase)
+    }
+    
+    func loadImageFromFirebase() {
+        let storage = Storage.storage().reference(withPath: order.logo)
+        storage.downloadURL { (url, error) in
+            if error != nil {
+                print((error?.localizedDescription)!)
+                return
+            }
+            self.imageURL = url!
         }
     }
 }
