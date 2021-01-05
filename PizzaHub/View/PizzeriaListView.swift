@@ -16,15 +16,10 @@ struct PizzeriaListView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                NavigationLink(destination: AddPizzeriaView()) {
-                    Text("Add Pizzeria")
-                }
-                List {
-                    ForEach(pizzerias.items) { pizzeria in
-                        NavigationLink(destination: PizzeriaDetailView(pizzeria: pizzeria)) {
-                            PizzeriaRow(pizzeria: pizzeria)
-                        }
+            List {
+                ForEach(pizzerias.items) { pizzeria in
+                    NavigationLink(destination: PizzeriaDetailView(pizzeria: pizzeria)) {
+                        PizzeriaRow(pizzeria: pizzeria)
                     }
                 }
             }

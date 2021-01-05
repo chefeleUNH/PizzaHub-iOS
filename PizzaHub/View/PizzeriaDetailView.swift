@@ -29,9 +29,6 @@ struct PizzeriaDetailView: View {
                 Text(pizzeria.city)
                 Text(pizzeria.state)
                 Spacer()
-                NavigationLink(destination: EditPizzeriaView(pizzeria: pizzeria)) {
-                    Text("Edit")
-                }
             }
             WebImage(url: imageURL)
                 .resizable()

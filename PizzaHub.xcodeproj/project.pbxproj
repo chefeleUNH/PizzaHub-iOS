@@ -14,7 +14,6 @@
 		1F3C147F23F50FDD007BE17A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F3C147C23F50FDD007BE17A /* GoogleService-Info.plist */; };
 		1F44C77E243D7A9A0073D59F /* MenuItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F44C77D243D7A9A0073D59F /* MenuItemRow.swift */; };
 		1F44C7C82442995E0073D59F /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F44C7C72442995E0073D59F /* CartView.swift */; };
-		1F6FB644243118B80003FC2A /* EditPizzeriaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6FB643243118B80003FC2A /* EditPizzeriaView.swift */; };
 		1F6FB6462431A5EC0003FC2A /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6FB6452431A5EC0003FC2A /* CircleImage.swift */; };
 		1F7D58152445851A00BEA339 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7D58142445851A00BEA339 /* CheckoutView.swift */; };
 		1F7D5817244587FF00BEA339 /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7D5816244587FF00BEA339 /* AppTabView.swift */; };
@@ -25,7 +24,6 @@
 		1FBDD68F24515EEC00DF838C /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBDD68E24515EEC00DF838C /* Order.swift */; };
 		1FBDD691245245BD00DF838C /* OrderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBDD690245245BD00DF838C /* OrderDetailView.swift */; };
 		1FBDD6932452531200DF838C /* OrderRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBDD6922452531200DF838C /* OrderRow.swift */; };
-		1FD3D675241CA21C005CF9AB /* AddPizzeriaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD3D674241CA21C005CF9AB /* AddPizzeriaView.swift */; };
 		1FD3D676241CAAAB005CF9AB /* Pizzeria.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2B255D240F671C00FFBD29 /* Pizzeria.swift */; };
 		1FD3D678241D8433005CF9AB /* PizzeriaDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD3D677241D8433005CF9AB /* PizzeriaDetailView.swift */; };
 		1FE3AF6223F274070050662E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE3AF6123F274070050662E /* AppDelegate.swift */; };
@@ -72,7 +70,6 @@
 		1F3C147C23F50FDD007BE17A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1F44C77D243D7A9A0073D59F /* MenuItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemRow.swift; sourceTree = "<group>"; };
 		1F44C7C72442995E0073D59F /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
-		1F6FB643243118B80003FC2A /* EditPizzeriaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPizzeriaView.swift; sourceTree = "<group>"; };
 		1F6FB6452431A5EC0003FC2A /* CircleImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		1F7D58142445851A00BEA339 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
 		1F7D5816244587FF00BEA339 /* AppTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabView.swift; sourceTree = "<group>"; };
@@ -83,7 +80,6 @@
 		1FBDD68E24515EEC00DF838C /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		1FBDD690245245BD00DF838C /* OrderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailView.swift; sourceTree = "<group>"; };
 		1FBDD6922452531200DF838C /* OrderRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRow.swift; sourceTree = "<group>"; };
-		1FD3D674241CA21C005CF9AB /* AddPizzeriaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPizzeriaView.swift; sourceTree = "<group>"; };
 		1FD3D677241D8433005CF9AB /* PizzeriaDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzeriaDetailView.swift; sourceTree = "<group>"; };
 		1FE3AF5E23F274070050662E /* PizzaHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PizzaHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FE3AF6123F274070050662E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -143,8 +139,6 @@
 				1FE3AF6523F274070050662E /* PizzeriaListView.swift */,
 				1F2B2563240F7D0500FFBD29 /* DebugView.swift */,
 				1FD3D677241D8433005CF9AB /* PizzeriaDetailView.swift */,
-				1FD3D674241CA21C005CF9AB /* AddPizzeriaView.swift */,
-				1F6FB643243118B80003FC2A /* EditPizzeriaView.swift */,
 				1F6FB6452431A5EC0003FC2A /* CircleImage.swift */,
 				1F8B02D2243D731300E78024 /* PizzeriaRow.swift */,
 				1F44C77D243D7A9A0073D59F /* MenuItemRow.swift */,
@@ -508,7 +502,6 @@
 				1FBDD691245245BD00DF838C /* OrderDetailView.swift in Sources */,
 				1F7D58152445851A00BEA339 /* CheckoutView.swift in Sources */,
 				1FE3AF9A23F278740050662E /* MenuItem.swift in Sources */,
-				1F6FB644243118B80003FC2A /* EditPizzeriaView.swift in Sources */,
 				1F6FB6462431A5EC0003FC2A /* CircleImage.swift in Sources */,
 				1FAC8EA4242B09D600416DA7 /* FirebaseCollection.swift in Sources */,
 				1FBDD6932452531200DF838C /* OrderRow.swift in Sources */,
@@ -519,7 +512,6 @@
 				1FE3AF6623F274070050662E /* PizzeriaListView.swift in Sources */,
 				1FBDD68D24515E9100DF838C /* OrdersView.swift in Sources */,
 				1F44C77E243D7A9A0073D59F /* MenuItemRow.swift in Sources */,
-				1FD3D675241CA21C005CF9AB /* AddPizzeriaView.swift in Sources */,
 				1F2B255E240F671C00FFBD29 /* Pizzeria.swift in Sources */,
 				1FD3D678241D8433005CF9AB /* PizzeriaDetailView.swift in Sources */,
 			);
