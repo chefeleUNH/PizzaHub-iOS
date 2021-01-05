@@ -8,8 +8,11 @@
 
 import SwiftUI
 import FirebaseFirestore
+import FirebaseStorage
+import SDWebImageSwiftUI
 
 struct PizzeriaDetailView: View {
+    @State private var imageURL = URL(string: "")
     @ObservedObject var pizzeria: Pizzeria
     @ObservedObject var menu: FirebaseCollection<MenuItem>
     private var menuCollectionRef: CollectionReference
@@ -30,7 +33,10 @@ struct PizzeriaDetailView: View {
                     Text("Edit")
                 }
             }
-            CircleImage(image: Image("pizzeria\(pizzeria.photo)"))
+            WebImage(url: imageURL)
+                .resizable()
+                .frame(width: 188, height: 150)
+                .cornerRadius(38)
             Text("Menu")
                 .font(.largeTitle)
             List {
@@ -42,8 +48,20 @@ struct PizzeriaDetailView: View {
             }
             Spacer()
         }
+        .onAppear(perform: loadImageFromFirebase)
         .padding()
         .navigationBarTitle(pizzeria.name)
+    }
+    
+    func loadImageFromFirebase() {
+        let storage = Storage.storage().reference(withPath: pizzeria.logo)
+        storage.downloadURL { (url, error) in
+            if error != nil {
+                print((error?.localizedDescription)!)
+                return
+            }
+            self.imageURL = url!
+        }
     }
 }
 
