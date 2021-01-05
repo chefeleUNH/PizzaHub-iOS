@@ -7,8 +7,11 @@
 //
 
 import SwiftUI
+import FirebaseStorage
+import SDWebImageSwiftUI
 
 struct MenuItemDetailView: View {
+    @State private var imageURL = URL(string: "")
     @EnvironmentObject var cart: ShoppingCart
     @ObservedObject var menuItem: MenuItem
     @ObservedObject var pizzeria: Pizzeria
@@ -16,7 +19,7 @@ struct MenuItemDetailView: View {
     
     var body: some View {
         VStack {
-            Image(menuItem.photo)
+            WebImage(url: imageURL)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
             Text(menuItem.name)
@@ -27,9 +30,21 @@ struct MenuItemDetailView: View {
             }.font(.headline)
             Spacer()
         }
+        .onAppear(perform: loadImageFromFirebase)
         .navigationBarTitle(Text(menuItem.name), displayMode: .inline)
         .alert(isPresented: $showingCartAlert) {
             Alert(title: Text("Invalid Request"), message: Text("The item you are trying to add to the shopping cart is from a different pizzeria. Only one pizzeria is allowed in the shopping cart at a time."), dismissButton: .default(Text("OK")))
+        }
+    }
+    
+    func loadImageFromFirebase() {
+        let storage = Storage.storage().reference(withPath: menuItem.photo)
+        storage.downloadURL { (url, error) in
+            if error != nil {
+                print((error?.localizedDescription)!)
+                return
+            }
+            self.imageURL = url!
         }
     }
     
