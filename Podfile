@@ -7,6 +7,8 @@ target 'PizzaHub' do
 
   # Pods for PizzaHub
   pod 'Firebase/Firestore'
+  pod 'Firebase/Storage'
+  pod 'SDWebImageSwiftUI'
 
   target 'PizzaHubTests' do
     inherit! :search_paths

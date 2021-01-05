@@ -18,13 +18,15 @@ class Pizzeria: FirebaseCodable, Equatable {
     @Published var city: String
     @Published var state: String
     @Published var photo: String
+    @Published var logo: String
     
     var data: [String: Any] {
         return [
             "name": name,
             "city": city,
             "state": state,
-            "photo": photo
+            "photo": photo,
+            "logo": logo
         ]
     }
     
@@ -32,7 +34,8 @@ class Pizzeria: FirebaseCodable, Equatable {
         guard let name = data["name"] as? String,
             let city = data["city"] as? String,
             let state = data["state"] as? String,
-            let photo = data["photo"] as? String
+            let photo = data["photo"] as? String,
+            let logo = data["logo"] as? String
             else {
                 return nil
         }
@@ -42,12 +45,14 @@ class Pizzeria: FirebaseCodable, Equatable {
         self.city = city
         self.state = state
         self.photo = photo
+        self.logo = logo
     }
     
     #if DEBUG
     static let example = Pizzeria(id: "1", data: ["name": "Vittoria's",
                                                   "city": "Westerly",
                                                   "state": "RI",
-                                                  "photo": "2"])!
+                                                  "photo": "2",
+                                                  "logo": "logo/vittorias.png"])!
     #endif
 }
