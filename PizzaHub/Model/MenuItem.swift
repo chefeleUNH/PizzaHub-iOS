@@ -43,6 +43,6 @@ class MenuItem: FirebaseCodable, Equatable {
     #if DEBUG
     static let example = MenuItem(id: "1", data: ["name": "Large Pizza",
                                                   "price": "17.99",
-                                                  "photo": "1"])!
+                                                  "photo": "menu/cheese.png"])!
     #endif
 }
