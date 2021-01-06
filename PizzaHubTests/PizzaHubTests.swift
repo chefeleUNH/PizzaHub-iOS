@@ -54,7 +54,7 @@ class PizzaHubTests: XCTestCase {
         let pizzeria2 = Pizzeria(id: "2", data: ["name": "Vittoria's",
                                                  "city": "Westerly",
                                                  "state": "RI",
-                                                 "photo": "2"])
+                                                 "logo": "logo/vittorias.png"])
         let cart = ShoppingCart()
         
         // add the first item, which should init the shopping cart with pizzeria1
