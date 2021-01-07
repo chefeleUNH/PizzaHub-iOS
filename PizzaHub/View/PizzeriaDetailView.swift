@@ -13,14 +13,14 @@ import SDWebImageSwiftUI
 
 struct PizzeriaDetailView: View {
     @State private var imageURL = URL(string: "")
-    @ObservedObject var pizzeria: Pizzeria
-    @ObservedObject var menu: FirebaseCollection<MenuItem>
-    private var menuCollectionRef: CollectionReference
+    @ObservedObject private var pizzeria: Pizzeria
+    @ObservedObject private var menu: FirebaseCollection<MenuItem>
+    private var menuQuery: Query
     
     init(pizzeria: Pizzeria) {
         self.pizzeria = pizzeria
-        self.menuCollectionRef = pizzeriasCollectionRef.document(pizzeria.id).collection("menu")
-        self.menu = FirebaseCollection<MenuItem>(collectionRef: menuCollectionRef)
+        self.menuQuery = pizzeriasCollectionRef.document(pizzeria.id).collection("menu").order(by: "name")
+        self.menu = FirebaseCollection<MenuItem>(query: menuQuery)
     }
     
     var body: some View {

@@ -16,13 +16,13 @@ protocol FirebaseCodable: Identifiable, ObservableObject {
 class FirebaseCollection<T: FirebaseCodable>: ObservableObject {
     @Published private(set) var items: [T]
     
-    init(collectionRef: CollectionReference) {
+    init(query: Query) {
         self.items = []
-        listenForChanges(collectionRef: collectionRef)
+        listenForChanges(query: query)
     }
     
-    private func listenForChanges(collectionRef: CollectionReference) {
-        collectionRef.addSnapshotListener { snapshot, error in
+    private func listenForChanges(query: Query) {
+        query.addSnapshotListener { snapshot, error in
             guard let snapshot = snapshot else {
                 print("Error fetching snapshots: \(error!)")
                 return

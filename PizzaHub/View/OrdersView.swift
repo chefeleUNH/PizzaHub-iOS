@@ -12,7 +12,13 @@ import FirebaseFirestore
 let ordersCollectionRef = Firestore.firestore().collection("orders")
 
 struct OrdersView: View {
-    @ObservedObject private var orders = FirebaseCollection<Order>(collectionRef: ordersCollectionRef)
+    @ObservedObject private var orders: FirebaseCollection<Order>
+    private var ordersQuery: Query
+    
+    init() {
+        self.ordersQuery = ordersCollectionRef.order(by: "timestamp", descending: true)
+        self.orders = FirebaseCollection<Order>(query: ordersQuery)
+    }
     
     var body: some View {
         NavigationView {

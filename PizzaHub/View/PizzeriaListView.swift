@@ -12,7 +12,13 @@ import FirebaseFirestore
 let pizzeriasCollectionRef = Firestore.firestore().collection("pizzerias")
 
 struct PizzeriaListView: View {
-    @ObservedObject private var pizzerias = FirebaseCollection<Pizzeria>(collectionRef: pizzeriasCollectionRef)
+    @ObservedObject private var pizzerias: FirebaseCollection<Pizzeria>
+    private var pizzeriasQuery: Query
+    
+    init() {
+        self.pizzeriasQuery = pizzeriasCollectionRef.order(by: "city")
+        self.pizzerias = FirebaseCollection<Pizzeria>(query: pizzeriasQuery)
+    }
     
     var body: some View {
         NavigationView {
