@@ -14,6 +14,7 @@
 		1F3C147F23F50FDD007BE17A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F3C147C23F50FDD007BE17A /* GoogleService-Info.plist */; };
 		1F44C77E243D7A9A0073D59F /* MenuItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F44C77D243D7A9A0073D59F /* MenuItemRow.swift */; };
 		1F44C7C82442995E0073D59F /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F44C7C72442995E0073D59F /* CartView.swift */; };
+		1F67DA0D25AE9D37002B77CC /* PizzaHubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F67DA0C25AE9D37002B77CC /* PizzaHubApp.swift */; };
 		1F6FB6462431A5EC0003FC2A /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6FB6452431A5EC0003FC2A /* CircleImage.swift */; };
 		1F7D58152445851A00BEA339 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7D58142445851A00BEA339 /* CheckoutView.swift */; };
 		1F7D5817244587FF00BEA339 /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7D5816244587FF00BEA339 /* AppTabView.swift */; };
@@ -27,7 +28,6 @@
 		1FD3D676241CAAAB005CF9AB /* Pizzeria.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2B255D240F671C00FFBD29 /* Pizzeria.swift */; };
 		1FD3D678241D8433005CF9AB /* PizzeriaDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD3D677241D8433005CF9AB /* PizzeriaDetailView.swift */; };
 		1FE3AF6223F274070050662E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE3AF6123F274070050662E /* AppDelegate.swift */; };
-		1FE3AF6423F274070050662E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE3AF6323F274070050662E /* SceneDelegate.swift */; };
 		1FE3AF6623F274070050662E /* PizzeriaListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE3AF6523F274070050662E /* PizzeriaListView.swift */; };
 		1FE3AF6823F274090050662E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FE3AF6723F274090050662E /* Assets.xcassets */; };
 		1FE3AF6B23F274090050662E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FE3AF6A23F274090050662E /* Preview Assets.xcassets */; };
@@ -70,6 +70,7 @@
 		1F3C147C23F50FDD007BE17A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1F44C77D243D7A9A0073D59F /* MenuItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemRow.swift; sourceTree = "<group>"; };
 		1F44C7C72442995E0073D59F /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
+		1F67DA0C25AE9D37002B77CC /* PizzaHubApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaHubApp.swift; sourceTree = "<group>"; };
 		1F6FB6452431A5EC0003FC2A /* CircleImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		1F7D58142445851A00BEA339 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
 		1F7D5816244587FF00BEA339 /* AppTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabView.swift; sourceTree = "<group>"; };
@@ -83,7 +84,6 @@
 		1FD3D677241D8433005CF9AB /* PizzeriaDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzeriaDetailView.swift; sourceTree = "<group>"; };
 		1FE3AF5E23F274070050662E /* PizzaHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PizzaHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FE3AF6123F274070050662E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1FE3AF6323F274070050662E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1FE3AF6523F274070050662E /* PizzeriaListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzeriaListView.swift; sourceTree = "<group>"; };
 		1FE3AF6723F274090050662E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1FE3AF6A23F274090050662E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -180,8 +180,8 @@
 			children = (
 				1FE3AF9723F278250050662E /* Model */,
 				1F2B25652410AEA400FFBD29 /* View */,
+				1F67DA0C25AE9D37002B77CC /* PizzaHubApp.swift */,
 				1FE3AF6123F274070050662E /* AppDelegate.swift */,
-				1FE3AF6323F274070050662E /* SceneDelegate.swift */,
 				1FE3AF6723F274090050662E /* Assets.xcassets */,
 				1FE3AF6C23F274090050662E /* LaunchScreen.storyboard */,
 				1FE3AF6F23F274090050662E /* Info.plist */,
@@ -498,6 +498,7 @@
 				1F44C7C82442995E0073D59F /* CartView.swift in Sources */,
 				1FBDD68F24515EEC00DF838C /* Order.swift in Sources */,
 				1FE3AF6223F274070050662E /* AppDelegate.swift in Sources */,
+				1F67DA0D25AE9D37002B77CC /* PizzaHubApp.swift in Sources */,
 				1F2B2564240F7D0500FFBD29 /* DebugView.swift in Sources */,
 				1FBDD691245245BD00DF838C /* OrderDetailView.swift in Sources */,
 				1F7D58152445851A00BEA339 /* CheckoutView.swift in Sources */,
@@ -508,7 +509,6 @@
 				1F8B02D3243D731300E78024 /* PizzeriaRow.swift in Sources */,
 				1F7D5817244587FF00BEA339 /* AppTabView.swift in Sources */,
 				1F846BE524469BE4009FAEDD /* MenuItemDetailView.swift in Sources */,
-				1FE3AF6423F274070050662E /* SceneDelegate.swift in Sources */,
 				1FE3AF6623F274070050662E /* PizzeriaListView.swift in Sources */,
 				1FBDD68D24515E9100DF838C /* OrdersView.swift in Sources */,
 				1F44C77E243D7A9A0073D59F /* MenuItemRow.swift in Sources */,
