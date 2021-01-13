@@ -14,7 +14,9 @@ struct PizzaHubApp: App {
 
     var body: some Scene {
         WindowGroup {
-            AppTabView().environmentObject(ShoppingCart())
+            AppTabView()
+                .environmentObject(ShoppingCart())
+                .environmentObject(FirebaseSession())
         }
     }
 }

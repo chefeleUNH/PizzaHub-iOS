@@ -8,6 +8,7 @@ target 'PizzaHub' do
   # Pods for PizzaHub
   pod 'Firebase/Firestore'
   pod 'Firebase/Storage'
+  pod 'Firebase/Auth'
   pod 'SDWebImageSwiftUI'
 
   target 'PizzaHubTests' do
