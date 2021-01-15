@@ -11,6 +11,8 @@ import FirebaseFirestore
 
 struct CheckoutView: View {
     @EnvironmentObject var cart: ShoppingCart
+    @EnvironmentObject var session: FirebaseSession
+        
     @State private var showingPaymentAlert = false
     
     var body: some View {
@@ -48,7 +50,8 @@ struct CheckoutView: View {
                     "pizzeria": pizzeria.name,
                     "items": self.cart.items.map({ $0.name }),
                     "total": String(format: "%.2f", cart.total),
-                    "logo": pizzeria.logo]
+                    "logo": pizzeria.logo,
+                    "user_id": session.user?.uid ?? "nil"]
             as [String : Any]
         ordersCollectionRef.addDocument(data: data) // post to firebase
         

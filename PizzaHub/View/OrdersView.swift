@@ -12,12 +12,19 @@ import FirebaseFirestore
 let ordersCollectionRef = Firestore.firestore().collection("orders")
 
 struct OrdersView: View {
-    @ObservedObject private var orders: FirebaseCollection<Order>
-    private var ordersQuery: Query
+    @EnvironmentObject var session: FirebaseSession
     
-    init() {
-        self.ordersQuery = ordersCollectionRef.order(by: "timestamp", descending: true)
-        self.orders = FirebaseCollection<Order>(query: ordersQuery)
+    var body: some View {
+        OrdersInternalView(orders: FirebaseCollection<Order>(query: ordersCollectionRef.whereField("user_id", isEqualTo: session.user?.uid ?? "nil").order(by: "timestamp", descending: true)))
+    }
+}
+
+struct OrdersInternalView: View {
+    @EnvironmentObject var session: FirebaseSession
+    @ObservedObject private var orders: FirebaseCollection<Order>
+    
+    init(orders: FirebaseCollection<Order>) {
+        self.orders = orders
     }
     
     var body: some View {

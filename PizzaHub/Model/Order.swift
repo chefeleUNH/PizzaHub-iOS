@@ -16,6 +16,7 @@ class Order : FirebaseCodable {
     @Published var total: String
     @Published var timestamp: Timestamp
     @Published var logo: String
+    @Published var userId: String
     
     var data: [String: Any] {
         return [
@@ -23,7 +24,8 @@ class Order : FirebaseCodable {
             "pizzeria": pizzeria,
             "total": total,
             "timestamp": timestamp,
-            "logo": logo
+            "logo": logo,
+            "user_id": userId
         ]
     }
     
@@ -32,7 +34,8 @@ class Order : FirebaseCodable {
             let pizzeria = data["pizzeria"] as? String,
             let total = data["total"] as? String,
             let timestamp = data["timestamp"] as? Timestamp,
-            let logo = data["logo"] as? String
+            let logo = data["logo"] as? String,
+            let userId = data["user_id"] as? String
             else {
                 return nil
         }
@@ -43,6 +46,7 @@ class Order : FirebaseCodable {
         self.total = total
         self.timestamp = timestamp
         self.logo = logo
+        self.userId = userId
     }
     
     #if DEBUG
@@ -50,6 +54,7 @@ class Order : FirebaseCodable {
                                                "pizzeria": "The Pizza Lady",
                                                "total": "24.99",
                                                "timestamp": Timestamp(),
-                                               "logo": "logo/pizza_lady.png"])!
+                                               "logo": "logo/pizza_lady.png",
+                                               "user_id": "Ye4CdGcba1duSk5fPD2KJSMc1nh2"])!
     #endif
 }
