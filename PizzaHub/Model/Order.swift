@@ -18,17 +18,6 @@ class Order : FirebaseCodable {
     @Published var logo: String
     @Published var userId: String
     
-    var data: [String: Any] {
-        return [
-            "items": items,
-            "pizzeria": pizzeria,
-            "total": total,
-            "timestamp": timestamp,
-            "logo": logo,
-            "user_id": userId
-        ]
-    }
-    
     required init?(id: String, data: [String : Any]) {
         guard let items = data["items"] as? [String],
             let pizzeria = data["pizzeria"] as? String,

@@ -18,14 +18,6 @@ class MenuItem: FirebaseCodable, Equatable {
     @Published var price: String
     @Published var photo: String
     
-    var data: [String: Any] {
-        return [
-            "name": name,
-            "price": price,
-            "photo": photo
-        ]
-    }
-    
     required init?(id: String, data: [String : Any]) {
         guard let name = data["name"] as? String,
             let price = data["price"] as? String,

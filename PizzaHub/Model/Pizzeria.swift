@@ -19,15 +19,6 @@ class Pizzeria: FirebaseCodable, Equatable {
     @Published var state: String
     @Published var logo: String
     
-    var data: [String: Any] {
-        return [
-            "name": name,
-            "city": city,
-            "state": state,
-            "logo": logo
-        ]
-    }
-    
     required init?(id: String, data: [String : Any]) {
         guard let name = data["name"] as? String,
             let city = data["city"] as? String,
