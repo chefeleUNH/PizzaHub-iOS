@@ -9,32 +9,44 @@
 import SwiftUI
 
 struct AppTabView: View {
+    @EnvironmentObject var session: FirebaseSession
+    
+    func getUser() {
+        session.listen()
+    }
+    
     var body: some View {
-        TabView {
-            PizzeriaListView()
-                .tabItem {
-                    Image(systemName: "list.dash").font(.title)
-                    Text("Pizzerias")
+        VStack {
+            if (session.user != nil) {
+                TabView {
+                    PizzeriaListView()
+                        .tabItem {
+                            Image(systemName: "list.dash").font(.title)
+                            Text("Pizzerias")
+                        }
+                    
+                    CartView()
+                        .tabItem {
+                            Image(systemName: "cart").font(.title)
+                            Text("Cart")
+                        }
+                    
+                    OrdersView()
+                        .tabItem {
+                            Image(systemName: "square.and.pencil").font(.title)
+                            Text("Orders")
+                        }
+                    
+                    ProfileView()
+                        .tabItem {
+                            Image(systemName: "person.crop.circle").font(.title)
+                            Text("Profile")
+                        }
                 }
-            
-            CartView()
-                .tabItem {
-                    Image(systemName: "cart").font(.title)
-                    Text("Cart")
-                }
-            
-            OrdersView()
-                .tabItem {
-                    Image(systemName: "square.and.pencil").font(.title)
-                    Text("Orders")
-                }
-            
-            ProfileView()
-                .tabItem {
-                    Image(systemName: "person.crop.circle").font(.title)
-                    Text("Profile")
-                }
-        }
+            } else {
+                AuthView()
+            }
+        }.onAppear(perform: getUser)
     }
 }
 

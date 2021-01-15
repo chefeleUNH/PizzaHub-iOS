@@ -11,20 +11,20 @@ import SwiftUI
 struct ProfileView: View {
     @EnvironmentObject var session: FirebaseSession
     
-    func getUser() {
-        session.listen()
-    }
-    
     var body: some View {
-        VStack {
-            if (session.user != nil) {
-                Text("Email: \(session.user?.email ?? "undefined")")
-                Button(action: session.signOut) {
-                    Text("Sign Out")
+        NavigationView {
+            List {
+                Section {
+                    Text(session.user?.email ?? "Not signed in")
                 }
-            } else {
-                AuthView()
+                Section {
+                    Button(action: session.signOut) {
+                        Text("Sign Out")
+                    }
+                }
             }
-        }.onAppear(perform: getUser)
+            .navigationBarTitle("Profile")
+            .listStyle(InsetGroupedListStyle())
+        }
     }
 }
