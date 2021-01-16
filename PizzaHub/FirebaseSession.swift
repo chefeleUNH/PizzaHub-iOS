@@ -14,7 +14,11 @@ class FirebaseSession: ObservableObject {
     @Published var user: User? {didSet {self.didChange.send(self) }}
     var handle: AuthStateDidChangeListenerHandle?
     
-    func listen() {
+    var isSignedIn: Bool {
+        return user != nil
+    }
+    
+    init() {
         handle = Auth.auth().addStateDidChangeListener({ (auth, user) in
             if let user = user {
                 self.user = User(uid: user.uid, email: user.email)

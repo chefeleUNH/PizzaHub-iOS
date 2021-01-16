@@ -11,6 +11,19 @@ import SwiftUI
 struct ProfileView: View {
     @EnvironmentObject var session: FirebaseSession
     
+    @ViewBuilder
+    var body: some View {
+        if (session.isSignedIn) {
+            SignedInView()
+        } else {
+            AuthView()
+        }
+    }
+}
+
+struct SignedInView: View {
+    @EnvironmentObject var session: FirebaseSession
+
     var body: some View {
         NavigationView {
             List {

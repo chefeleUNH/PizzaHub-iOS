@@ -11,49 +11,37 @@ import SwiftUI
 struct AppTabView: View {
     @EnvironmentObject var session: FirebaseSession
     
-    func getUser() {
-        session.listen()
-    }
-    
     var body: some View {
-        VStack {
-            if (session.user != nil) {
-                TabView {
-                    PizzeriaListView()
-                        .tabItem {
-                            Image(systemName: "list.dash").font(.title)
-                            Text("Pizzerias")
-                        }
-                    
-                    CartView()
-                        .tabItem {
-                            Image(systemName: "cart").font(.title)
-                            Text("Cart")
-                        }
-                    
-                    OrdersView()
-                        .tabItem {
-                            Image(systemName: "square.and.pencil").font(.title)
-                            Text("Orders")
-                        }
-                    
-                    ProfileView()
-                        .tabItem {
-                            Image(systemName: "person.crop.circle").font(.title)
-                            Text("Profile")
-                        }
+        TabView {
+            PizzeriaListView()
+                .tabItem {
+                    Image(systemName: "list.dash").font(.title)
+                    Text("Pizzerias")
                 }
-            } else {
-                AuthView()
-            }
-        }.onAppear(perform: getUser)
+            
+            CartView()
+                .tabItem {
+                    Image(systemName: "cart").font(.title)
+                    Text("Cart")
+                }
+            
+            OrdersView()
+                .tabItem {
+                    Image(systemName: "square.and.pencil").font(.title)
+                    Text("Orders")
+                }
+            
+            ProfileView()
+                .tabItem {
+                    Image(systemName: "person.crop.circle").font(.title)
+                    Text("Profile")
+                }
+        }
     }
 }
 
 struct AppTabView_Previews: PreviewProvider {
-    static let cart = ShoppingCart()
-    
     static var previews: some View {
-        AppTabView().environmentObject(cart)
+        AppTabView()
     }
 }
