@@ -10,9 +10,11 @@ import SwiftUI
 import FirebaseFirestore
 
 struct CheckoutView: View {
+    @EnvironmentObject var appState: AppState
     @EnvironmentObject var cart: ShoppingCart
     @EnvironmentObject var session: FirebaseSession
-        
+    @Environment(\.presentationMode) var mode
+
     @State private var showingPaymentAlert = false
     
     var body: some View {
@@ -25,16 +27,23 @@ struct CheckoutView: View {
                     .font(.largeTitle)
             }
             Button("Confirm order") {
-                self.confirmOrder()
-            }
+                confirmOrder()
+            }.font(.headline)
             .padding()
             .disabled(cart.items.isEmpty)
         }
-        .navigationBarTitle(Text("Payment"), displayMode: .inline)
+        .onAppear(perform: dismissIfNotSignedIn)
+        .navigationBarTitle("Checkout")
         .alert(isPresented: $showingPaymentAlert) {
             Alert(title: Text("Order confirmed"), message: Text("Your total was $\(cart.total, specifier: "%.2f") - thank you!"), dismissButton: .default(Text("OK")) {
                 self.cart.reset()
                 })
+        }
+    }
+    
+    func dismissIfNotSignedIn() {
+        if (!session.isSignedIn) {
+            self.mode.wrappedValue.dismiss()
         }
     }
     
