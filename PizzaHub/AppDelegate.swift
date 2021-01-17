@@ -6,7 +6,6 @@
 //  Copyright © 2020 Charles Hefele. All rights reserved.
 //
 
-import UIKit
 import Firebase
 
 class AppDelegate: NSObject, UIApplicationDelegate {
