@@ -11,6 +11,8 @@ import FirebaseStorage
 import SDWebImageSwiftUI
 
 struct MenuItemDetailView: View {
+    @EnvironmentObject var appState: AppState
+    @EnvironmentObject var session: FirebaseSession
     @State private var imageURL = URL(string: "")
     @EnvironmentObject var cart: ShoppingCart
     @ObservedObject var menuItem: MenuItem
@@ -25,9 +27,15 @@ struct MenuItemDetailView: View {
             Text(menuItem.name)
                 .font(.largeTitle)
                 .padding()
-            Button("Add to cart") {
-                self.addToCart()
-            }.font(.headline)
+            if (session.isSignedIn) {
+                Button("Add to cart") {
+                    self.addToCart()
+                }.font(.headline)
+            } else {
+                Button("Sign in to add items to the cart") {
+                    appState.selectedTab = Tab.profile
+                }.font(.headline)
+            }
             Spacer()
         }
         .onAppear(perform: loadImageFromFirebase)

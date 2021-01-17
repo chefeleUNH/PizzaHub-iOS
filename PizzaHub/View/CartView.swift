@@ -9,31 +9,49 @@
 import SwiftUI
 
 struct CartView: View {
-    @EnvironmentObject var cart: ShoppingCart
+    @EnvironmentObject var appState: AppState
+    @EnvironmentObject var session: FirebaseSession
     
     var body: some View {
         NavigationView {
-            List {
-                Section {
-                    ForEach(cart.items) { item in
-                        HStack {
-                            Text(item.name)
-                            Spacer()
-                            Text("$\(item.price)")
-                        }
-                    }.onDelete(perform: deleteItems)
-                }
-                
-                Section {
-                    NavigationLink(destination: CheckoutView()) {
-                        Text("Place Order")
+            Group {
+                if (session.isSignedIn) {
+                    CartInternalView()
+                } else {
+                    Button("Sign in to use the cart") {
+                        appState.selectedTab = Tab.profile
                     }
-                }.disabled(cart.items.isEmpty)
+                    .font(.headline)
+                }
             }
             .navigationBarTitle("Shopping Cart")
-            .listStyle(GroupedListStyle())
-            .navigationBarItems(trailing: EditButton())
         }
+    }
+}
+
+struct CartInternalView: View {
+    @EnvironmentObject var cart: ShoppingCart
+
+    var body: some View {
+        List {
+            Section {
+                ForEach(cart.items) { item in
+                    HStack {
+                        Text(item.name)
+                        Spacer()
+                        Text("$\(item.price)")
+                    }
+                }.onDelete(perform: deleteItems)
+            }
+
+            Section {
+                NavigationLink(destination: CheckoutView()) {
+                    Text("Place Order")
+                }
+            }.disabled(cart.items.isEmpty)
+        }
+        .listStyle(GroupedListStyle())
+        .navigationBarItems(trailing: EditButton())
     }
     
     func deleteItems(at offsets: IndexSet) {

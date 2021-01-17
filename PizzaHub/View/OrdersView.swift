@@ -12,33 +12,39 @@ import FirebaseFirestore
 let ordersCollectionRef = Firestore.firestore().collection("orders")
 
 struct OrdersView: View {
+    @EnvironmentObject var appState: AppState
     @EnvironmentObject var session: FirebaseSession
-    
-    var body: some View {
-        OrdersInternalView(orders: FirebaseCollection<Order>(query: ordersCollectionRef.whereField("user_id", isEqualTo: session.user?.uid ?? "nil").order(by: "timestamp", descending: true)))
-    }
-}
-
-struct OrdersInternalView: View {
-    @EnvironmentObject var session: FirebaseSession
-    @ObservedObject private var orders: FirebaseCollection<Order>
-    
-    init(orders: FirebaseCollection<Order>) {
-        self.orders = orders
-    }
     
     var body: some View {
         NavigationView {
-            VStack {
-                List {
-                    ForEach(orders.items) { order in
-                        NavigationLink(destination: OrderDetailView(order: order)) {
-                            OrderRow(order: order)
-                        }
+            Group {
+                if (session.isSignedIn) {
+                    OrdersInternalView(orders: FirebaseCollection<Order>(query: ordersCollectionRef.whereField("user_id", isEqualTo: session.user?.uid ?? "nil").order(by: "timestamp", descending: true)))
+                } else {
+                    Button("Sign in to view past orders") {
+                        appState.selectedTab = Tab.profile
+                    }
+                    .font(.headline)
+                }
+            }.navigationBarTitle("Order History")
+        }
+    }
+    
+    struct OrdersInternalView: View {
+        @ObservedObject private var orders: FirebaseCollection<Order>
+        
+        init(orders: FirebaseCollection<Order>) {
+            self.orders = orders
+        }
+        
+        var body: some View {
+            List {
+                ForEach(orders.items) { order in
+                    NavigationLink(destination: OrderDetailView(order: order)) {
+                        OrderRow(order: order)
                     }
                 }
             }
-            .navigationBarTitle("Order History")
         }
     }
 }
