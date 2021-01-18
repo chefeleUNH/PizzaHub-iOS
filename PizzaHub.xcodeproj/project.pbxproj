@@ -165,6 +165,18 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		1F3EF8B325B51B6F001280B8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1F67DA0C25AE9D37002B77CC /* PizzaHubApp.swift */,
+				1F67DA4125B3F05B002B77CC /* AppState.swift */,
+				1F67DA4625B3F0A8002B77CC /* Tab.swift */,
+				1F67DA1C25AEA30F002B77CC /* FirebaseSession.swift */,
+				1FE3AF6123F274070050662E /* AppDelegate.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		1FE3AF5523F274070050662E = {
 			isa = PBXGroup;
 			children = (
@@ -192,11 +204,7 @@
 			children = (
 				1FE3AF9723F278250050662E /* Model */,
 				1F2B25652410AEA400FFBD29 /* View */,
-				1F67DA0C25AE9D37002B77CC /* PizzaHubApp.swift */,
-				1F67DA4125B3F05B002B77CC /* AppState.swift */,
-				1F67DA4625B3F0A8002B77CC /* Tab.swift */,
-				1F67DA1C25AEA30F002B77CC /* FirebaseSession.swift */,
-				1FE3AF6123F274070050662E /* AppDelegate.swift */,
+				1F3EF8B325B51B6F001280B8 /* Controller */,
 				1FE3AF6723F274090050662E /* Assets.xcassets */,
 				1FE3AF6C23F274090050662E /* LaunchScreen.storyboard */,
 				1FE3AF6F23F274090050662E /* Info.plist */,
