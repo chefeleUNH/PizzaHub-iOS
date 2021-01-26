@@ -51,10 +51,12 @@ struct CheckoutView: View {
         // toggle the payment alert
         self.showingPaymentAlert.toggle()
         
-        // upload the order to firebase
-        guard let pizzeria = self.cart.pizzeria else {  // null check the pizzeria
+        // null check the pizzeria
+        guard let pizzeria = self.cart.pizzeria else {
             return
         }
+        
+        // define the data
         let data = ["timestamp": Timestamp(),
                     "pizzeria": pizzeria.name,
                     "items": self.cart.items.map({ $0.name }),
@@ -62,7 +64,16 @@ struct CheckoutView: View {
                     "logo": pizzeria.logo,
                     "user_id": session.user?.uid ?? "nil"]
             as [String : Any]
-        ordersCollectionRef.addDocument(data: data) // post to firebase
+        
+        // post it to Firebase as a new document
+        var ref: DocumentReference? = nil
+        ref = ordersCollectionRef.addDocument(data: data) { err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            } else {
+                print("Document added with ID: \(ref!.documentID)")
+            }
+        }
         
         // show pizza ready notification to the user
         let content = UNMutableNotificationContent()
