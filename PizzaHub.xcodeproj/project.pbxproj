@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1F2B255E240F671C00FFBD29 /* Pizzeria.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2B255D240F671C00FFBD29 /* Pizzeria.swift */; };
-		1F2B2564240F7D0500FFBD29 /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2B2563240F7D0500FFBD29 /* DebugView.swift */; };
 		1F3C147D23F50FDD007BE17A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F3C147C23F50FDD007BE17A /* GoogleService-Info.plist */; };
 		1F3C147E23F50FDD007BE17A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F3C147C23F50FDD007BE17A /* GoogleService-Info.plist */; };
 		1F3C147F23F50FDD007BE17A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F3C147C23F50FDD007BE17A /* GoogleService-Info.plist */; };
@@ -71,7 +70,6 @@
 		1CAE205812ED927A903EF9AF /* Pods-PizzaHub-PizzaHubUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PizzaHub-PizzaHubUITests.debug.xcconfig"; path = "Target Support Files/Pods-PizzaHub-PizzaHubUITests/Pods-PizzaHub-PizzaHubUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		1E0470A0FA4A7EBCDBBD15FB /* Pods-PizzaHub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PizzaHub.release.xcconfig"; path = "Target Support Files/Pods-PizzaHub/Pods-PizzaHub.release.xcconfig"; sourceTree = "<group>"; };
 		1F2B255D240F671C00FFBD29 /* Pizzeria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pizzeria.swift; sourceTree = "<group>"; };
-		1F2B2563240F7D0500FFBD29 /* DebugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugView.swift; sourceTree = "<group>"; };
 		1F3C147C23F50FDD007BE17A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1F44C77D243D7A9A0073D59F /* MenuItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemRow.swift; sourceTree = "<group>"; };
 		1F44C7C72442995E0073D59F /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
@@ -147,7 +145,6 @@
 			isa = PBXGroup;
 			children = (
 				1FE3AF6523F274070050662E /* PizzeriaListView.swift */,
-				1F2B2563240F7D0500FFBD29 /* DebugView.swift */,
 				1FD3D677241D8433005CF9AB /* PizzeriaDetailView.swift */,
 				1F6FB6452431A5EC0003FC2A /* CircleImage.swift */,
 				1F8B02D2243D731300E78024 /* PizzeriaRow.swift */,
@@ -523,7 +520,6 @@
 				1F67DA4225B3F05B002B77CC /* AppState.swift in Sources */,
 				1FE3AF6223F274070050662E /* AppDelegate.swift in Sources */,
 				1F67DA0D25AE9D37002B77CC /* PizzaHubApp.swift in Sources */,
-				1F2B2564240F7D0500FFBD29 /* DebugView.swift in Sources */,
 				1F67DA4725B3F0A8002B77CC /* Tab.swift in Sources */,
 				1F67DA3D25AEA6A2002B77CC /* AuthView.swift in Sources */,
 				1FBDD691245245BD00DF838C /* OrderDetailView.swift in Sources */,
